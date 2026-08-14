@@ -1,0 +1,24 @@
+<svg width="640" height="180" viewBox="0 0 640 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="sysEraGradient" x1="26" y1="24" x2="146" y2="146" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#9DDCFF"/>
+      <stop offset="1" stop-color="#7FA8FF"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="640" height="180" rx="32" fill="#0B111A"/>
+
+  <g transform="translate(24 18)">
+    <rect x="0" y="0" width="144" height="144" rx="30" fill="#0F1725" stroke="rgba(255,255,255,0.08)"/>
+    <path d="M72 20L112 42V86L72 108L32 86V42L72 20Z" fill="url(#sysEraGradient)" fill-opacity="0.14" stroke="url(#sysEraGradient)" stroke-width="6"/>
+    <path d="M72 38L98 54V90L72 106L46 90V54L72 38Z" fill="url(#sysEraGradient)" fill-opacity="0.18" stroke="url(#sysEraGradient)" stroke-width="6"/>
+    <path d="M46 54L72 72L98 54" stroke="url(#sysEraGradient)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M72 72V106" stroke="url(#sysEraGradient)" stroke-width="8" stroke-linecap="round"/>
+    <path d="M72 106L46 90" stroke="url(#sysEraGradient)" stroke-width="8" stroke-linecap="round"/>
+    <path d="M72 106L98 90" stroke="url(#sysEraGradient)" stroke-width="8" stroke-linecap="round"/>
+  </g>
+
+  <g transform="translate(190 42)">
+    <text x="0" y="56" fill="#F5F7FA" font-family="Segoe UI, Arial, sans-serif" font-size="52" font-weight="700" letter-spacing="-2">SysEra</text>
+  </g>
+</svg>
