@@ -1,0 +1,15 @@
+<svg width="256" height="256" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="markGradient" x1="40" y1="32" x2="204" y2="220" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#9DDCFF"/>
+      <stop offset="1" stop-color="#7FA8FF"/>
+    </linearGradient>
+  </defs>
+  <rect width="256" height="256" rx="42" fill="#0B111A"/>
+  <path d="M128 34L196 74V134L128 174L60 134V74L128 34Z" fill="url(#markGradient)" fill-opacity="0.14" stroke="url(#markGradient)" stroke-width="8"/>
+  <path d="M128 56L170 80V124L128 148L86 124V80L128 56Z" fill="url(#markGradient)" fill-opacity="0.2" stroke="url(#markGradient)" stroke-width="8"/>
+  <path d="M86 80L128 104L170 80" stroke="url(#markGradient)" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M128 104V148" stroke="url(#markGradient)" stroke-width="10" stroke-linecap="round"/>
+  <path d="M128 148L86 124" stroke="url(#markGradient)" stroke-width="10" stroke-linecap="round"/>
+  <path d="M128 148L170 124" stroke="url(#markGradient)" stroke-width="10" stroke-linecap="round"/>
+</svg>
