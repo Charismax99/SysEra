@@ -68,16 +68,7 @@ if (!empty($errors)) {
     exit;
 }
 
-$recipient = 'YOUR_EMAIL_HERE';
-
-if ($recipient === 'YOUR_EMAIL_HERE') {
-    http_response_code(503);
-    echo json_encode([
-        'success' => false,
-        'message' => 'The contact email is not configured yet. Update $recipient in contact/send.php.'
-    ]);
-    exit;
-}
+$recipient = '9xdonx@gmail.com';
 
 $subject = 'New SysEra inquiry from ' . $name;
 $body = "Name: {$name}\n";
