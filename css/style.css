@@ -126,19 +126,26 @@ button {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  min-height: 78px;
+  min-height: 74px;
   gap: 1rem;
 }
 
 .brand {
   display: inline-flex;
   align-items: center;
-  min-width: 150px;
+  min-width: 186px;
 }
 
 .brand img {
-  width: 156px;
+  width: 184px;
   height: auto;
+  transition: transform var(--transition), filter var(--transition);
+}
+
+.brand:hover img,
+.brand:focus-visible img {
+  transform: translateY(-1px) scale(1.01);
+  filter: drop-shadow(0 0 10px rgba(157, 220, 255, 0.28));
 }
 
 .site-nav {
@@ -233,6 +240,7 @@ button {
 .hero-visual {
   display: flex;
   justify-content: center;
+  animation: heroFloat 10s ease-in-out infinite;
 }
 
 .visual-frame {
@@ -413,6 +421,10 @@ button {
   fill: var(--accent-strong);
 }
 
+.card-icon {
+  transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
+}
+
 .feature-card h3,
 .service-card h3,
 .value-item h3,
@@ -439,6 +451,22 @@ button {
 
 .service-card {
   min-height: 100%;
+  transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition), background-color var(--transition);
+}
+
+.service-card:hover,
+.service-card:focus-within {
+  background: rgba(20, 26, 36, 0.95);
+  transform: translateY(-5px);
+  border-color: rgba(127, 168, 255, 0.38);
+  box-shadow: 0 22px 44px rgba(0, 0, 0, 0.22);
+}
+
+.service-card:hover .card-icon,
+.service-card:focus-within .card-icon {
+  border-color: rgba(157, 220, 255, 0.38);
+  box-shadow: 0 10px 22px rgba(127, 168, 255, 0.22);
+  transform: translateY(-1px);
 }
 
 .why-us-section {
@@ -537,7 +565,7 @@ button {
 .contact-wrap {
   display: grid;
   grid-template-columns: 0.9fr 1.1fr;
-  gap: 1.7rem;
+  gap: 2rem;
   align-items: start;
 }
 
@@ -549,12 +577,13 @@ button {
 
 .contact-copy {
   min-height: 100%;
+  padding: 2.2rem;
 }
 
 .contact-details {
   display: grid;
   gap: 1rem;
-  margin-top: 2rem;
+  margin-top: 2.4rem;
 }
 
 .detail-item {
@@ -735,6 +764,20 @@ button:disabled {
   transform: translateY(0);
 }
 
+.service-card.reveal {
+  transition-delay: calc(var(--stagger-index, 0) * 80ms);
+}
+
+@keyframes heroFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
 @media (max-width: 980px) {
   .hero-grid,
   .contact-wrap,
@@ -835,7 +878,7 @@ button:disabled {
   }
 
   .brand img {
-    width: 132px;
+    width: 154px;
   }
 
   .hero-copy h1 {
@@ -872,5 +915,9 @@ button:disabled {
   .reveal {
     opacity: 1;
     transform: none;
+  }
+
+  .hero-visual {
+    animation: none !important;
   }
 }
