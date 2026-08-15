@@ -917,3 +917,7 @@ button:disabled {
     transform: none;
   }
 }
+
+.site-nav a.btn-primary {
+  color: #ffffff !important;
+}
