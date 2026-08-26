@@ -404,88 +404,90 @@
 
 <!-- ضيف الـstyle ده في css/style.css أو جوه <style> في نفس الصفحة -->
 <style>
-    .footer-bottom{
-        position:relative;
-        padding-top:20px;
-        overflow:hidden;
-    }
+.footer-bottom{
+    position:relative;
+    padding-top:20px;
+    overflow:visible;
+}
 
-    /* الخط المتحرك فوق */
-    .fb-line{
-        width:100%;
-        height:1px;
-        margin:0 0 16px;
-        background:rgba(255,255,255,0.08);
-        position:relative;
-        overflow:hidden;
-    }
-    .fb-line::before{
-        content:"";
-        position:absolute;
-        top:0;
-        left:-50%;
-        width:50%;
-        height:100%;
-        background:linear-gradient(90deg, transparent, rgba(255,255,255,.6), transparent);
-        animation: fb-line-sweep 7s ease-in-out infinite;
-    }
-    @keyframes fb-line-sweep{
-        0%   { left:-50%; }
-        100% { left:150%; }
-    }
+/* الخط فوق - نسخة أشيك بتوهج خفيف في النص */
+.footer-bottom .fb-line{
+    width:100%;
+    height:1px;
+    margin:0 0 16px;
+    background:linear-gradient(90deg, transparent, rgba(255,255,255,.15), transparent);
+    position:relative;
+    overflow:hidden;
+}
+.footer-bottom .fb-line::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:-50%;
+    width:50%;
+    height:100%;
+    background:linear-gradient(90deg, transparent, rgba(212,175,55,.8), rgba(255,255,255,.9), rgba(212,175,55,.8), transparent);
+    box-shadow:0 0 8px rgba(212,175,55,.6);
+    animation: fb-line-sweep 7s ease-in-out infinite;
+}
+@keyframes fb-line-sweep{
+    0%   { left:-50%; }
+    100% { left:150%; }
+}
 
-    /* النقطة النابضة */
-    .fb-dot{
-        display:inline-block;
-        width:4px;
-        height:4px;
-        margin:0 12px;
-        background:rgba(212,175,55,.5);
-        border-radius:50%;
-        vertical-align:middle;
-        animation: fb-dot 2.5s ease-in-out infinite;
-    }
-    @keyframes fb-dot{
-        0%, 100% { transform:scale(1);   opacity:.5; }
-        50%      { transform:scale(1.8); opacity:1;  }
-    }
+/* النقطة النابضة */
+.footer-bottom .fb-dot{
+    display:inline-block;
+    width:4px;
+    height:4px;
+    margin:0 12px;
+    background:rgba(212,175,55,.5);
+    border-radius:50%;
+    vertical-align:middle;
+    animation: fb-dot 2.5s ease-in-out infinite;
+}
+@keyframes fb-dot{
+    0%, 100% { transform:scale(1);   opacity:.5; }
+    50%      { transform:scale(1.8); opacity:1;  }
+}
 
-    /* Don Charisma بالتأثير الذهبي المتحرك */
-    .fb-link{
-        text-decoration:none !important;
-        font-weight:700;
-        position:relative;
-        padding-bottom:6px;
-        background:linear-gradient(90deg, #c9a96e, #f5e6d3, #e8d5b7, #c9a96e);
-        -webkit-background-clip:text;
-        -webkit-text-fill-color:transparent;
-        background-clip:text;
-        background-size:300% auto;
-        animation: fb-gold 5s ease-in-out infinite;
-        transition:filter .3s ease;
-    }
-    .fb-link:hover{
-        filter:brightness(1.3);
-    }
-    .fb-link::after{
-        content:"";
-        position:absolute;
-        left:50%;
-        bottom:0;
-        width:0%;
-        height:1px;
-        transform:translateX(-50%);
-        background:linear-gradient(90deg, transparent, #c9a96e, #f5e6d3, #e8d5b7, #c9a96e, transparent);
-        transition:width .5s ease-in-out;
-    }
-    .fb-link:hover::after{
-        width:100%;
-    }
-    @keyframes fb-gold{
-        0%   { background-position:0% 50%; }
-        50%  { background-position:100% 50%; }
-        100% { background-position:0% 50%; }
-    }
+/* Don Charisma - لازم specificity أعلى من أي ستايل تاني في الموقع بيطبق على الـa جوه الفوتر */
+.footer-bottom p a.fb-link{
+    text-decoration:none !important;
+    font-weight:700;
+    display:inline-block;
+    position:relative;
+    padding-bottom:6px;
+    background:linear-gradient(90deg, #c9a96e, #f5e6d3, #e8d5b7, #c9a96e);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    background-clip:text;
+    background-size:300% auto;
+    animation: fb-gold 5s ease-in-out infinite;
+    transition:filter .3s ease;
+}
+.footer-bottom p a.fb-link:hover{
+    filter:brightness(1.3);
+}
+.footer-bottom p a.fb-link::after{
+    content:"";
+    position:absolute;
+    left:50%;
+    bottom:0;
+    width:0%;
+    height:1px;
+    transform:translateX(-50%);
+    background:linear-gradient(90deg, transparent, #c9a96e, #f5e6d3, #e8d5b7, #c9a96e, transparent);
+    transition:width .5s ease-in-out;
+}
+.footer-bottom p a.fb-link:hover::after{
+    width:100%;
+}
+@keyframes fb-gold{
+    0%   { background-position:0% 50%; }
+    50%  { background-position:100% 50%; }
+    100% { background-position:0% 50%; }
+}
 </style>
 
 
