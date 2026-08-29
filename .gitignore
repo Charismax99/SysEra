@@ -2,3 +2,5 @@
 Thumbs.db
 *.log
 .env
+*.env
+contact/smtp-config.php
