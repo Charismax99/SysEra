@@ -66,9 +66,10 @@ const initForm = () => {
     const formData = new FormData(form);
     const name = String(formData.get('name') || '').trim();
     const email = String(formData.get('email') || '').trim();
+    const phone = String(formData.get('phone') || '').trim();
     const message = String(formData.get('message') || '').trim();
 
-    if (!name || !email || !message) {
+  if (!name || !email || !phone || !message) {
       setStatus('error', 'Please complete all required fields.');
       return;
     }
@@ -79,6 +80,14 @@ const initForm = () => {
       return;
     }
 
+    const phonePattern = /^[+\d][\d\s().-]{7,}$/;
+
+  if (!phonePattern.test(phone)) {
+  setStatus('error', 'Please enter a valid phone or WhatsApp number.');
+  return;
+}
+
+    
     if (message.length < 10) {
       setStatus('error', 'Your message should be at least 10 characters long.');
       return;
