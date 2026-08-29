@@ -34,6 +34,7 @@ $email = sanitize_value(strtolower($_POST['email'] ?? ''));
 $company = sanitize_value($_POST['company'] ?? '');
 $projectType = sanitize_value($_POST['project_type'] ?? '');
 $messageText = sanitize_value($_POST['message'] ?? '');
+$phone = sanitize_value($_POST['phone'] ?? '');
 
 $errors = [];
 
