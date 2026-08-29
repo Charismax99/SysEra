@@ -57,6 +57,7 @@ if ($messageText === '' || strlen($messageText) < 10) {
 if (
     contains_header_injection($name) ||
     contains_header_injection($email) ||
+    contains_header_injection($phone) ||
     contains_header_injection($company) ||
     contains_header_injection($projectType) ||
     contains_header_injection($messageText)
