@@ -78,6 +78,7 @@ $recipient = '9xdonx@gmail.com';
 $subject = 'New SysEra inquiry from ' . $name;
 $body = "Name: {$name}\n";
 $body .= "Email: {$email}\n";
+$body .= "Phone / WhatsApp: {$phone}\n";
 $body .= "Company: " . ($company !== '' ? $company : 'Not provided') . "\n";
 $body .= "Project Type: " . ($projectType !== '' ? $projectType : 'Not provided') . "\n\n";
 $body .= "Message:\n{$messageText}\n";
