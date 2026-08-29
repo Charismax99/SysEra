@@ -46,6 +46,10 @@ if ($email === '' || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
     $errors[] = 'Please enter a valid email address.';
 }
 
+if ($phone === '' || !preg_match('/^[+\d][\d\s().-]{7,}$/', $phone)) {
+    $errors[] = 'Please enter a valid phone or WhatsApp number.';
+}
+
 if ($messageText === '' || strlen($messageText) < 10) {
     $errors[] = 'Please write a message with at least 10 characters.';
 }
