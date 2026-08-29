@@ -701,7 +701,6 @@ button:disabled {
 
 .site-footer {
   padding: 2.6rem 0 1.2rem;
-  border-top: 1px solid var(--border);
   background: rgba(8, 9, 13, 0.7);
 }
 
