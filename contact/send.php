@@ -85,7 +85,7 @@ $body .= "Project Type: " . ($projectType !== '' ? $projectType : 'Not provided'
 $body .= "Message:\n{$messageText}\n";
 
 $headers = [
-    'From: SysEra Website <noreply@sysera.tech>',
+    'From: SysEra Website <hello@sysera.tech>',
     'Reply-To: ' . $name . ' <' . $email . '>',
     'Content-Type: text/plain; charset=UTF-8',
     'X-Mailer: SysEra Website'
