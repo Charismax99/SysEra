@@ -27,7 +27,7 @@ html {
 
 body {
   margin: 0;
-  font-family: Inter, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-family: "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   background:
     radial-gradient(circle at top, rgba(127, 168, 255, 0.12), transparent 35%),
     linear-gradient(180deg, #08090d 0%, #0a0d12 100%);
@@ -90,6 +90,18 @@ button {
   text-transform: uppercase;
 }
 
+h1,
+h2,
+h3,
+.site-nav,
+.btn,
+.panel-main strong,
+.panel-small strong,
+.footer-nav,
+.fb-link {
+  font-family: "Space Grotesk", "Segoe UI", sans-serif;
+}
+
 .section-header {
   max-width: 640px;
   margin-bottom: 2rem;
@@ -98,7 +110,8 @@ button {
 .section-header h2,
 .hero-copy h1 {
   margin: 0;
-  letter-spacing: -0.05em;
+  font-weight: 600;
+  letter-spacing: -0.045em;
   line-height: 1.06;
 }
 
@@ -159,6 +172,8 @@ button {
 .site-nav a {
   color: var(--muted);
   font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
   transition: color var(--transition);
 }
 
@@ -180,6 +195,7 @@ button {
   border-radius: 999px;
   padding: 0.9rem 1.4rem;
   font-weight: 600;
+  letter-spacing: 0.01em;
   transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition), background-color var(--transition);
 }
 
@@ -435,6 +451,8 @@ button {
 .process-step h3 {
   margin: 0 0 0.6rem;
   font-size: 1.4rem;
+  font-weight: 600;
+  letter-spacing: -0.025em;
 }
 
 .feature-card p,
@@ -630,6 +648,7 @@ label {
   color: var(--text);
   font-weight: 600;
   font-size: 0.95rem;
+  letter-spacing: 0.005em;
 }
 
 input,
@@ -700,7 +719,7 @@ button:disabled {
 }
 
 .footer-brand img {
-  width: 160px;
+  width: 174px;
 }
 
 .footer-nav,
@@ -725,8 +744,92 @@ button:disabled {
 }
 
 .footer-bottom {
-  padding-top: 1rem;
-  border-top: 1px solid var(--border);
+  position: relative;
+  padding-top: 1.25rem;
+  overflow: visible;
+}
+
+.footer-bottom .fb-line {
+  position: relative;
+  width: 100%;
+  height: 1px;
+  margin: 0 0 1rem;
+  overflow: hidden;
+}
+
+.footer-bottom .fb-line::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -50%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.8), rgba(255, 255, 255, 0.9), rgba(212, 175, 55, 0.8), transparent);
+  box-shadow: 0 0 8px rgba(212, 175, 55, 0.6);
+  animation: fb-line-sweep 7s ease-in-out infinite;
+}
+
+@keyframes fb-line-sweep {
+  0% { left: -50%; }
+  100% { left: 150%; }
+}
+
+.footer-bottom .fb-dot {
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  margin: 0 12px;
+  vertical-align: middle;
+  background: rgba(212, 175, 55, 0.5);
+  border-radius: 50%;
+  animation: fb-dot 2.5s ease-in-out infinite;
+}
+
+@keyframes fb-dot {
+  0%, 100% { transform: scale(1); opacity: 0.5; }
+  50% { transform: scale(1.8); opacity: 1; }
+}
+
+.footer-bottom p a.fb-link {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 6px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  background: linear-gradient(90deg, #c9a96e, #f5e6d3, #e8d5b7, #c9a96e);
+  background-clip: text;
+  background-size: 300% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: fb-gold 5s ease-in-out infinite;
+  transition: filter 0.3s ease;
+}
+
+.footer-bottom p a.fb-link:hover {
+  filter: brightness(1.3);
+}
+
+.footer-bottom p a.fb-link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 1px;
+  transform: translateX(-50%);
+  background: linear-gradient(90deg, transparent, #c9a96e, #f5e6d3, #e8d5b7, #c9a96e, transparent);
+  transition: width 0.5s ease-in-out;
+}
+
+.footer-bottom p a.fb-link:hover::after {
+  width: 100%;
+}
+
+@keyframes fb-gold {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 .nav-toggle {
@@ -862,6 +965,10 @@ button:disabled {
     flex-direction: column;
     align-items: flex-start;
   }
+
+  .footer-bottom {
+    padding-top: 1rem;
+  }
 }
 
 @media (max-width: 480px) {
@@ -874,7 +981,11 @@ button:disabled {
   }
 
   .brand img {
-    width: 148px;
+    width: 154px;
+  }
+
+  .footer-brand img {
+    width: 164px;
   }
 
   .hero-copy h1 {
