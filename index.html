@@ -16,7 +16,7 @@
     <meta name="twitter:title" content="SysEra | Software Development & Digital Solutions" />
     <meta name="twitter:description" content="SysEra builds modern websites, software and digital solutions designed for performance, scalability and growth." />
     <meta name="twitter:image" content="https://sysera.tech/favicon.svg" />
-    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="icon" type="image/png" sizes="512x512" href="assets/logo/sys-era-favicon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
@@ -25,280 +25,523 @@
   <body>
     <header class="site-header" id="top">
       <div class="container nav-wrap">
-        <a class="brand" href="#home" aria-label="SysEra home">
-          <img src="assets/logo/sys-era-logo-horizontal.svg" alt="SysEra logo" />
-        </a>
+        <div class="nav-shell">
+          <a class="brand" href="#home" aria-label="SysEra home">
+            <img src="assets/logo/sys-era-logo.png" alt="SysEra — Build Tomorrow" />
+          </a>
 
-        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Open navigation menu">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
+          <nav class="site-nav" id="site-menu" aria-label="Main navigation">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#process">Process</a>
+            <a href="#contact">Contact</a>
+          </nav>
 
-        <nav class="site-nav" id="site-menu" aria-label="Main navigation">
-          <a href="#home">Home</a>
-          <a href="#about">About</a>
-          <a href="#services">Services</a>
-          <a href="#process">Process</a>
-          <a href="#contact">Contact</a>
           <a href="#contact" class="btn btn-primary nav-cta">Let's Talk</a>
-        </nav>
+
+          <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Open navigation menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
       </div>
     </header>
 
     <main id="home">
-      <section class="section hero">
-        <div class="container hero-grid">
-          <div class="hero-copy reveal">
-            <p class="eyebrow">Modern digital solutions</p>
-            <h1>Building Digital Solutions That Move Businesses Forward.</h1>
-            <p class="lead">SysEra builds modern software, websites and digital solutions designed to be fast, scalable and reliable.</p>
+      <section class="section hero" aria-labelledby="hero-title">
+        <div class="hero-atmosphere" aria-hidden="true">
+          <div class="hero-grid-lines"></div>
+          <div class="hero-cursor-light"></div>
+          <svg class="wolf-geometry" viewBox="0 0 900 650" preserveAspectRatio="xMidYMid meet">
+            <g>
+              <path d="M450 96 548 158 637 110 608 260 694 333 580 368 529 510 450 444 371 510 320 368 206 333 292 260 263 110 352 158Z" />
+              <path d="m292 260 158 74 158-74M352 158l98 176 98-176M320 368l130-34 130 34M371 510l79-176 79 176" />
+              <path d="m356 305 46 18-38 38m180-56-46 18 38 38M409 400h82" />
+              <circle cx="364" cy="361" r="5" />
+              <circle cx="536" cy="361" r="5" />
+            </g>
+          </svg>
+          <span class="tech-mark tech-mark-one">[ 01 ]</span>
+          <span class="tech-mark tech-mark-two">SYS / ERA</span>
+          <span class="tech-mark tech-mark-three">&lt;/&gt;</span>
+          <span class="data-node data-node-one"></span>
+          <span class="data-node data-node-two"></span>
+          <span class="data-node data-node-three"></span>
+        </div>
 
-            <div class="hero-actions">
-              <a href="#services" class="btn btn-primary">Explore Services</a>
-              <a href="#contact" class="btn btn-secondary">Let's Talk</a>
+        <div class="container hero-inner">
+          <div class="hero-copy">
+            <div class="hero-badge hero-enter hero-enter-badge">
+              <span class="status-dot" aria-hidden="true"></span>
+              <span>A SOFTWARE HOUSE BUILT FOR GROWTH</span>
+              <svg viewBox="0 0 18 18" aria-hidden="true"><path d="m9 1 1.4 5.6L16 8l-5.6 1.4L9 15l-1.4-5.6L2 8l5.6-1.4L9 1Z" /></svg>
             </div>
 
-            <div class="hero-trust">Modern development. Thoughtful engineering. Built to scale.</div>
+            <h1 id="hero-title">
+              <span class="headline-line hero-enter hero-enter-line-one">We build digital experiences</span>
+              <span class="headline-line headline-accent hero-enter hero-enter-line-two">that mean business.</span>
+            </h1>
+
+            <p class="lead hero-enter hero-enter-copy">Websites, software and digital growth solutions built to help businesses stand out, work smarter and grow.</p>
+
+            <div class="hero-actions hero-enter hero-enter-actions">
+              <a href="#contact" class="btn btn-primary hero-primary">Start a Project</a>
+              <a href="#services" class="btn btn-secondary hero-secondary">Explore Services <span aria-hidden="true">↓</span></a>
+            </div>
           </div>
+        </div>
 
-          <div class="hero-visual reveal" aria-hidden="true">
-            <div class="visual-frame">
-              <div class="visual-glow"></div>
-
-              <div class="data-panel panel-main">
-                <span class="panel-label">System Overview</span>
-                <strong>Digital Operations</strong>
-                <div class="status-row">
-                  <span>Stable</span>
-                  <span class="status-pill">Live</span>
-                </div>
-              </div>
-
-              <div class="data-panel panel-small small-top">
-                <span>API</span>
-                <strong>96ms</strong>
-              </div>
-
-              <div class="data-panel panel-small small-bottom">
-                <span>Web</span>
-                <strong>Fast</strong>
-              </div>
-
-              <svg class="system-svg" viewBox="0 0 520 420" role="img" aria-label="Abstract system visualization">
-                <defs>
-                  <linearGradient id="lineGlow" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stop-color="#90B5FF" />
-                    <stop offset="100%" stop-color="#7BE0FF" />
-                  </linearGradient>
-                </defs>
-                <path d="M80 110 L180 95 L260 150 L380 120 L448 176" />
-                <path d="M80 260 L180 210 L260 250 L380 220 L448 260" />
-                <path d="M180 95 L180 210" />
-                <path d="M260 150 L260 250" />
-                <path d="M380 120 L380 220" />
-                <circle cx="80" cy="110" r="8" />
-                <circle cx="180" cy="95" r="10" />
-                <circle cx="260" cy="150" r="12" />
-                <circle cx="380" cy="120" r="9" />
-                <circle cx="448" cy="176" r="12" />
-                <circle cx="80" cy="260" r="8" />
-                <circle cx="180" cy="210" r="10" />
-                <circle cx="260" cy="250" r="12" />
-                <circle cx="380" cy="220" r="9" />
-                <circle cx="448" cy="260" r="12" />
-              </svg>
+        <div class="capabilities-strip hero-enter hero-enter-strip" aria-label="SysEra capabilities">
+          <div class="capabilities-track">
+            <div class="capabilities-group">
+              <span>Web Development</span><i>✦</i><span>E-commerce</span><i>✦</i><span>SEO</span><i>✦</i><span>Digital Marketing</span><i>✦</i><span>Custom Software</span><i>✦</i><span>AI &amp; Automation</span><i>✦</i><span>API Integrations</span><i>✦</i><span>UI/UX</span><i>✦</i>
+            </div>
+            <div class="capabilities-group" aria-hidden="true">
+              <span>Web Development</span><i>✦</i><span>E-commerce</span><i>✦</i><span>SEO</span><i>✦</i><span>Digital Marketing</span><i>✦</i><span>Custom Software</span><i>✦</i><span>AI &amp; Automation</span><i>✦</i><span>API Integrations</span><i>✦</i><span>UI/UX</span><i>✦</i>
             </div>
           </div>
         </div>
       </section>
 
       <section id="about" class="section about-section">
-        <div class="container">
-          <div class="section-header reveal">
-            <p class="eyebrow">About</p>
-            <h2>Technology Built Around Your Goals.</h2>
+        <div class="about-atmosphere" aria-hidden="true">
+          <span class="about-angle about-angle-one"></span>
+          <span class="about-angle about-angle-two"></span>
+        </div>
+
+        <div class="container about-layout">
+          <div class="about-editorial">
+            <p class="eyebrow reveal about-reveal about-reveal-eyebrow">ABOUT SYSERA</p>
+            <h2>
+              <span class="about-headline-line reveal about-reveal about-reveal-line-one">We don’t just build it.</span>
+              <span class="about-headline-line about-headline-accent reveal about-reveal about-reveal-line-two">We make it work for you.</span>
+            </h2>
+            <p class="about-intro reveal about-reveal about-reveal-copy">SysEra is a digital team that brings development, design and growth under one roof. We build around what your business actually needs, not around a fixed stack or a one-size-fits-all process.</p>
           </div>
 
-          <p class="section-intro reveal">SysEra is a software development company focused on creating modern, reliable and scalable digital solutions. We combine clean engineering with practical thinking to build technology that solves real problems.</p>
+          <div class="about-bento" aria-label="How SysEra works">
+            <svg class="about-connector" viewBox="0 0 600 500" preserveAspectRatio="none" aria-hidden="true">
+              <path class="connector-base" d="M104 170H322V92H506V342H340V418H116" />
+              <path class="connector-signal" d="M104 170H322V92H506V342H340V418H116" />
+              <circle cx="104" cy="170" r="4" />
+              <circle cx="506" cy="92" r="4" />
+              <circle cx="116" cy="418" r="4" />
+            </svg>
 
-          <div class="feature-grid">
-            <article class="feature-card reveal">
-              <div class="icon-wrap" aria-hidden="true">
-                <svg viewBox="0 0 24 24" role="img"><path d="M12 2.5 4 6.7v6.6c0 4.1 2.8 7.8 8 9.7 5.2-1.9 8-5.6 8-9.7V6.7L12 2.5Zm0 3.2 5.4 2.9v4.7c0 2.9-1.8 5.4-5.4 7-3.6-1.6-5.4-4.1-5.4-7V8.6L12 5.7Zm-1.2 4.1h2.4v7.1h-2.4V9.8Zm1.2-2.8a1.3 1.3 0 1 1 0 2.6 1.3 1.3 0 0 1 0-2.6Z"/></svg>
+            <article class="philosophy-block philosophy-primary reveal about-reveal about-reveal-card-one">
+              <span class="philosophy-number">01</span>
+              <span class="philosophy-detail" aria-hidden="true">BUSINESS / FIRST</span>
+              <div class="philosophy-copy">
+                <h3>Built around the business</h3>
+                <p>We choose the right approach for the job, not the other way around.</p>
               </div>
-              <h3>Modern Technology</h3>
-              <p>We use modern tools and development practices to create fast and maintainable digital products.</p>
+              <span class="block-corner" aria-hidden="true"></span>
             </article>
 
-            <article class="feature-card reveal">
-              <div class="icon-wrap" aria-hidden="true">
-                <svg viewBox="0 0 24 24" role="img"><path d="M4 18.5V8.7L12 3l8 5.7v9.8H4Zm2-1.1h12v-7.5L12 6l-6 4.9v7.5Zm2.8-1.8h6.4v-1.8H8.8v1.8Zm0-3.6h9.4v-1.8H8.8v1.8ZM10.8 5.7h2.4v2.1h-2.4V5.7Z"/></svg>
+            <article class="philosophy-block philosophy-secondary reveal about-reveal about-reveal-card-two">
+              <span class="philosophy-number">02</span>
+              <span class="philosophy-detail" aria-hidden="true">ONE / TEAM</span>
+              <div class="philosophy-copy">
+                <h3>One team, more capabilities</h3>
+                <p>Development, design and growth working together instead of operating in separate silos.</p>
               </div>
-              <h3>Built to Scale</h3>
-              <p>We build with future growth in mind, so your product can evolve as your needs change.</p>
+              <span class="block-corner" aria-hidden="true"></span>
             </article>
 
-            <article class="feature-card reveal">
-              <div class="icon-wrap" aria-hidden="true">
-                <svg viewBox="0 0 24 24" role="img"><path d="M6.5 15.3V8.8H4.8V6.9h7.6v1.9H10.7v6.5h1.7v2H7.2v-2h-.7Zm7.7 0V6.9h3.7l1.2 1.8v6.6h-1.9v-1.3h-2.2v1.3h-1.8Zm2.9-4.5h1.8v-1.1h-1.8v1.1Zm-3.2 4.1h2.7V8.7h-2.7v6.2Z"/></svg>
+            <article class="philosophy-block philosophy-tertiary reveal about-reveal about-reveal-card-three">
+              <span class="philosophy-number">03</span>
+              <span class="philosophy-detail" aria-hidden="true">BUILT / FORWARD</span>
+              <div class="philosophy-copy">
+                <h3>Made to keep moving</h3>
+                <p>Built for what you need today, with room to evolve as your business grows.</p>
               </div>
-              <h3>Focused on Results</h3>
-              <p>Every solution starts with a goal. We focus on building technology that delivers meaningful value.</p>
+              <span class="block-corner" aria-hidden="true"></span>
             </article>
           </div>
         </div>
       </section>
 
-      <section id="services" class="section">
-        <div class="container">
-          <div class="section-header reveal">
-            <p class="eyebrow">Services</p>
-            <h2>Services That Turn Ideas Into Products.</h2>
+      <section id="services" class="section services-section" aria-labelledby="services-title">
+        <div class="services-atmosphere" aria-hidden="true">
+          <span class="services-angle services-angle-one"></span>
+          <span class="services-angle services-angle-two"></span>
+          <span class="services-micro-label">SYS / SERVICES</span>
+        </div>
+
+        <div class="container services-inner">
+          <div class="services-intro">
+            <div>
+              <p class="eyebrow reveal service-reveal service-reveal-eyebrow">SERVICES</p>
+              <h2 id="services-title">
+                <span class="services-headline-line reveal service-reveal service-reveal-line-one">What we do</span>
+                <span class="services-headline-line services-headline-accent reveal service-reveal service-reveal-line-two">when ideas need to work.</span>
+              </h2>
+            </div>
+            <p class="services-summary reveal service-reveal service-reveal-summary">From the first screen to the systems behind it, we design, build and grow digital products.</p>
           </div>
 
-          <div class="service-grid">
-            <article class="service-card reveal">
-              <div class="card-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24"><path d="M4 6.9A2.9 2.9 0 0 1 6.9 4h10.2A2.9 2.9 0 0 1 20 6.9v6.4a2.9 2.9 0 0 1-2.9 2.9H6.9A2.9 2.9 0 0 1 4 13.3V6.9Zm2 0v6.4c0 .5.4.9.9.9h10.2c.5 0 .9-.4.9-.9V6.9c0-.5-.4-.9-.9-.9H6.9c-.5 0-.9.4-.9.9Zm2.5 2.2 1.8 1.8-1.8 1.8 1.4 1.4 3.2-3.2-3.2-3.2-1.4 1.4Zm7 5.9h-7v2h7v-2Z"/></svg>
+          <div class="service-matrix">
+            <article class="service-module service-web reveal service-reveal service-reveal-anchor-one">
+              <div class="service-module-head">
+                <span class="service-number">01</span>
+                <span class="service-code" aria-hidden="true">BUILD / COMMERCE</span>
               </div>
-              <h3>Web Development</h3>
-              <p>Fast, responsive and custom websites and web applications built around your goals.</p>
+              <div class="service-body">
+                <div class="service-copy">
+                  <h3>Web &amp; <span class="service-title-nowrap">E-commerce</span></h3>
+                  <p>Fast, polished websites and online stores built to perform, convert and grow with your business.</p>
+                </div>
+                <div class="service-visual web-visual" aria-hidden="true">
+                  <div class="browser-chrome"><i></i><i></i><i></i><span></span></div>
+                  <div class="browser-layout">
+                    <span class="web-nav"></span>
+                    <span class="web-hero-block"></span>
+                    <span class="web-copy-block"></span>
+                    <span class="web-card-block web-card-one"></span>
+                    <span class="web-card-block web-card-two"></span>
+                    <span class="web-code-indicator">&lt;/&gt;</span>
+                  </div>
+                </div>
+              </div>
+              <ul class="service-capabilities" aria-label="Web and e-commerce capabilities">
+                <li>WordPress</li><li>WooCommerce</li><li>Custom Websites</li><li>Web Applications</li>
+              </ul>
             </article>
 
-            <article class="service-card reveal">
-              <div class="card-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24"><path d="M5 6.5A2.5 2.5 0 0 1 7.5 4h9A2.5 2.5 0 0 1 19 6.5v9A2.5 2.5 0 0 1 16.5 18h-1.1l1 2h-2.2l-1-2h-2.4l-1 2H7.6l1-2H7.5A2.5 2.5 0 0 1 5 15.5v-9Zm2 0v9c0 .3.2.5.5.5h9c.3 0 .5-.2.5-.5v-9c0-.3-.2-.5-.5-.5h-9c-.3 0-.5.2-.5.5Zm2 1.5h6v5H9V8Z"/></svg>
+            <article class="service-module service-growth reveal service-reveal service-reveal-anchor-two">
+              <div class="service-module-head">
+                <span class="service-number">02</span>
+                <span class="service-code" aria-hidden="true">FIND / CONVERT</span>
               </div>
-              <h3>Software Development</h3>
-              <p>Custom software solutions designed to solve specific business and operational needs.</p>
+              <div class="service-visual growth-visual" aria-hidden="true">
+                <div class="search-field"><span></span><i></i></div>
+                <svg viewBox="0 0 360 150" preserveAspectRatio="none">
+                  <path class="growth-grid" d="M10 125H350M10 88H350M10 50H350" />
+                  <path class="growth-path" d="M18 124 88 108 145 113 210 72 264 81 342 27" />
+                  <circle cx="18" cy="124" r="4" /><circle cx="88" cy="108" r="4" /><circle cx="145" cy="113" r="4" /><circle cx="210" cy="72" r="4" /><circle cx="264" cy="81" r="4" /><circle class="growth-target" cx="342" cy="27" r="8" />
+                </svg>
+              </div>
+              <div class="service-copy">
+                <h3>SEO &amp; Digital Growth</h3>
+                <p>Search, content and campaigns built around one goal: helping the right people find you and take action.</p>
+              </div>
+              <ul class="service-capabilities" aria-label="SEO and digital growth capabilities">
+                <li>SEO</li><li>Content</li><li>Paid Campaigns</li><li>Analytics</li>
+              </ul>
             </article>
 
-            <article class="service-card reveal">
-              <div class="card-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24"><path d="M4 10a4 4 0 0 1 4-4h1V4h2v2h2V4h2v2h1a4 4 0 0 1 4 4v7a3 3 0 0 1-3 3h-1v-3a2 2 0 1 0-4 0v3h-4v-3a2 2 0 1 0-4 0v3H7a3 3 0 0 1-3-3v-7Zm2 0v7c0 .6.4 1 1 1h1v-1a4 4 0 1 1 8 0v1h1c.6 0 1-.4 1-1v-7a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2Z"/></svg>
+            <article class="service-module service-software reveal service-reveal service-reveal-three">
+              <div class="service-module-head">
+                <span class="service-number">03</span>
+                <span class="service-symbol" aria-hidden="true">⌁</span>
               </div>
-              <h3>E-commerce</h3>
-              <p>Modern online stores focused on performance, usability and conversion.</p>
+              <div class="service-visual software-visual" aria-hidden="true">
+                <span class="system-node system-node-a"></span><span class="system-node system-node-b"></span><span class="system-node system-node-c"></span><span class="system-node system-node-d"></span>
+                <svg viewBox="0 0 250 100"><path d="M45 28H118V72H205M118 28V15M118 72V88" /><circle cx="118" cy="28" r="3" /><circle cx="118" cy="72" r="3" /></svg>
+              </div>
+              <div class="service-copy">
+                <h3>Custom Software</h3>
+                <p>Business tools and systems shaped around the way your team actually works.</p>
+              </div>
+              <ul class="service-capabilities" aria-label="Custom software capabilities">
+                <li>Business Systems</li><li>Dashboards</li><li>Internal Tools</li><li>Workflows</li>
+              </ul>
             </article>
 
-            <article class="service-card reveal">
-              <div class="card-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24"><path d="M4 6.5A2.5 2.5 0 0 1 6.5 4h11A2.5 2.5 0 0 1 20 6.5v8A2.5 2.5 0 0 1 17.5 17h-4.4l-3 3v-3H6.5A2.5 2.5 0 0 1 4 14.5v-8Zm2 0v8c0 .3.2.5.5.5h5.6v1l1-1h4.4c.3 0 .5-.2.5-.5v-8c0-.3-.2-.5-.5-.5h-11c-.3 0-.5.2-.5.5Zm5.6 1.3 3.5 2.2-3.5 2.2V7.8Z"/></svg>
+            <article class="service-module service-ai reveal service-reveal service-reveal-four">
+              <div class="service-module-head">
+                <span class="service-number">04</span>
+                <span class="service-symbol service-spark" aria-hidden="true">✦</span>
               </div>
-              <h3>UI/UX Development</h3>
-              <p>Clean and intuitive digital experiences designed around real users.</p>
+              <div class="service-visual ai-visual" aria-hidden="true">
+                <svg viewBox="0 0 220 150">
+                  <path d="M110 75 40 32M110 75l72-38M110 75l-58 50M110 75l66 52" />
+                  <circle class="ai-core" cx="110" cy="75" r="15" /><circle cx="40" cy="32" r="6" /><circle cx="182" cy="37" r="6" /><circle cx="52" cy="125" r="6" /><circle cx="176" cy="127" r="6" />
+                  <circle class="ai-pulse" cx="110" cy="75" r="4" />
+                </svg>
+              </div>
+              <div class="service-copy">
+                <h3>AI &amp; Automation</h3>
+                <p>Practical automation and AI integrations that remove repetitive work and make everyday operations smarter.</p>
+              </div>
+              <ul class="service-capabilities" aria-label="AI and automation capabilities">
+                <li>AI Integrations</li><li>Workflow Automation</li><li>AI Agents</li><li>Smart Assistants</li>
+              </ul>
             </article>
 
-            <article class="service-card reveal">
-              <div class="card-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24"><path d="M6 6h7V4H3v10h2V7.4l3.2 3.2 1.4-1.4L6.4 6H6Zm5 1h10v10h-2V9.4l-3.2 3.2-1.4-1.4L17.6 8H11V7Zm7 5h3v8h-8v-3h2v1h4v-6h-1v-2Zm-8 0h6v2h-6v-2Zm-7 4h8v4H3v-4Zm2 2v1h4v-1H5Z"/></svg>
+            <article class="service-module service-api reveal service-reveal service-reveal-five">
+              <div class="service-module-head">
+                <span class="service-number">05</span>
+                <span class="service-symbol" aria-hidden="true">&lt;/&gt;</span>
               </div>
-              <h3>Automation</h3>
-              <p>Streamline repetitive processes and improve efficiency with smart automation.</p>
+              <div class="service-visual api-visual" aria-hidden="true">
+                <span class="api-endpoint api-endpoint-a">A</span>
+                <span class="api-line"><i></i></span>
+                <span class="api-endpoint api-endpoint-b">B</span>
+              </div>
+              <div class="service-copy">
+                <h3>APIs &amp; Integrations</h3>
+                <p>We connect the tools, platforms and services your business already depends on.</p>
+              </div>
+              <ul class="service-capabilities" aria-label="API and integration capabilities">
+                <li>APIs</li><li>Payments</li><li>Third-party Services</li><li>System Connections</li>
+              </ul>
             </article>
 
-            <article class="service-card reveal">
-              <div class="card-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24"><path d="M6 8a3 3 0 1 1 0 6 3 3 0 0 1 0-6Zm0 2a1 1 0 1 0 0 2 1 1 0 0 0 0-2Zm12-2a3 3 0 1 1 0 6 3 3 0 0 1 0-6Zm0 2a1 1 0 1 0 0 2 1 1 0 0 0 0-2Zm-6 4a3 3 0 1 1 0 6 3 3 0 0 1 0-6Zm0 2a1 1 0 1 0 0 2 1 1 0 0 0 0-2Zm-4.6-3.1 1.2-1.6 3.1 2.2-1.2 1.6-3.1-2.2Zm8.9.6 3.1-2.2 1.2 1.6-3.1 2.2-1.2-1.6Zm-4.4 4.7h-2v-2.2h2v2.2Z"/></svg>
+            <article class="service-module service-design reveal service-reveal service-reveal-six">
+              <div class="service-module-head">
+                <span class="service-number">06</span>
+                <span class="service-code" aria-hidden="true">DESIGN / SYSTEM</span>
               </div>
-              <h3>API & Integrations</h3>
-              <p>Connect platforms, services and systems into one reliable digital ecosystem.</p>
+              <div class="service-visual design-visual" aria-hidden="true">
+                <span class="design-frame"></span>
+                <span class="design-block design-block-one"></span>
+                <span class="design-block design-block-two"></span>
+                <span class="design-block design-block-three"></span>
+                <span class="design-selection"></span>
+              </div>
+              <div class="service-copy">
+                <h3>UI/UX &amp; Product Design</h3>
+                <p>Clear, thoughtful interfaces designed around real people and real tasks.</p>
+              </div>
+              <ul class="service-capabilities" aria-label="UI UX and product design capabilities">
+                <li>UX</li><li>UI Design</li><li>Prototyping</li><li>Design Systems</li>
+              </ul>
             </article>
           </div>
         </div>
       </section>
 
-      <section id="why-us" class="section why-us-section">
-        <div class="container">
-          <div class="section-header reveal">
-            <p class="eyebrow">Why SysEra</p>
-            <h2>Why SysEra?</h2>
+      <section id="why-us" class="section why-us-section" aria-labelledby="why-us-title">
+        <div class="why-atmosphere" aria-hidden="true">
+          <span class="why-angle why-angle-one"></span>
+          <span class="why-angle why-angle-two"></span>
+        </div>
+
+        <div class="container why-inner">
+          <div class="why-intro">
+            <div>
+              <p class="eyebrow reveal why-reveal why-reveal-eyebrow">WHY SYSERA</p>
+              <h2 id="why-us-title">
+                <span class="why-headline-line reveal why-reveal why-reveal-line-one">Less friction.</span>
+                <span class="why-headline-line why-headline-accent reveal why-reveal why-reveal-line-two">More forward motion.</span>
+              </h2>
+            </div>
+            <div class="why-intro-aside">
+              <p class="why-summary reveal why-reveal why-reveal-summary">Clear communication, practical decisions and a team that stays focused on getting the work done right.</p>
+              <span class="why-micro-label" aria-hidden="true">WHY / SYSERA<br>04 REASONS</span>
+            </div>
           </div>
 
-          <div class="value-grid">
-            <article class="value-item reveal">
-              <span class="value-number">01</span>
-              <h3>Clean & Modern</h3>
-              <p>We build products that are fast, intuitive and easy to maintain.</p>
+          <div class="why-rows">
+            <article class="why-row why-row-signal reveal why-reveal why-reveal-row-one">
+              <span class="why-number">01</span>
+              <div class="why-copy">
+                <h3>CLEAR FROM DAY ONE</h3>
+                <p>No disappearing behind jargon or process.</p>
+              </div>
+              <div class="why-visual signal-visual" aria-hidden="true">
+                <span class="signal-node signal-node-start"></span>
+                <span class="signal-line"><i></i></span>
+                <span class="signal-node signal-node-end"></span>
+              </div>
             </article>
 
-            <article class="value-item reveal">
-              <span class="value-number">02</span>
-              <h3>Reliable</h3>
-              <p>Strong foundations and thoughtful engineering from the start.</p>
+            <article class="why-row why-row-structure reveal why-reveal why-reveal-row-two">
+              <span class="why-number">02</span>
+              <div class="why-copy">
+                <h3>BUILT FOR THE REAL WORLD</h3>
+                <p>Decisions based on what the project actually needs.</p>
+              </div>
+              <div class="why-visual structure-visual" aria-hidden="true">
+                <span class="structure-bracket structure-bracket-left"></span>
+                <span class="structure-block structure-block-one"></span>
+                <span class="structure-block structure-block-two"></span>
+                <span class="structure-block structure-block-three"></span>
+                <span class="structure-bracket structure-bracket-right"></span>
+              </div>
             </article>
 
-            <article class="value-item reveal">
-              <span class="value-number">03</span>
-              <h3>Flexible</h3>
-              <p>Solutions shaped around your actual business needs.</p>
+            <article class="why-row why-row-converge reveal why-reveal why-reveal-row-three">
+              <span class="why-number">03</span>
+              <div class="why-copy">
+                <h3>ONE TEAM. ONE DIRECTION.</h3>
+                <p>Development, design and growth moving together.</p>
+              </div>
+              <div class="why-visual converge-visual" aria-hidden="true">
+                <svg viewBox="0 0 280 100" preserveAspectRatio="xMidYMid meet">
+                  <path d="M22 18H92L148 50H252" />
+                  <path d="M22 50H148" />
+                  <path d="M22 82H92L148 50" />
+                  <circle cx="22" cy="18" r="4" /><circle cx="22" cy="50" r="4" /><circle cx="22" cy="82" r="4" />
+                  <circle class="converge-core" cx="148" cy="50" r="7" /><circle class="converge-target" cx="252" cy="50" r="5" />
+                </svg>
+              </div>
             </article>
 
-            <article class="value-item reveal">
-              <span class="value-number">04</span>
-              <h3>Long-Term Thinking</h3>
-              <p>We build with future growth, maintenance and scalability in mind.</p>
+            <article class="why-row why-row-continuity reveal why-reveal why-reveal-row-four">
+              <span class="why-number">04</span>
+              <div class="why-copy">
+                <h3>BUILT BEYOND LAUNCH</h3>
+                <p>We think past launch day, so what we build has room to evolve.</p>
+              </div>
+              <div class="why-visual continuity-visual" aria-hidden="true">
+                <span class="continuity-origin"></span>
+                <span class="continuity-path"><i></i></span>
+                <span class="continuity-launch"></span>
+                <span class="continuity-beyond"><i></i></span>
+                <span class="continuity-next"></span>
+              </div>
             </article>
           </div>
         </div>
       </section>
 
-      <section id="process" class="section process-section">
-        <div class="container">
-          <div class="section-header reveal">
-            <p class="eyebrow">Process</p>
-            <h2>How We Build.</h2>
+      <section id="process" class="section process-section" aria-labelledby="process-title">
+        <div class="process-atmosphere" aria-hidden="true">
+          <span class="process-angle process-angle-one"></span>
+          <span class="process-angle process-angle-two"></span>
+        </div>
+
+        <div class="container process-inner">
+          <div class="process-intro">
+            <div>
+              <p class="eyebrow reveal process-reveal process-reveal-eyebrow">PROCESS</p>
+              <h2 id="process-title" class="reveal process-reveal process-reveal-title">How We Build.</h2>
+            </div>
+            <span class="process-micro-label reveal process-reveal process-reveal-label" aria-hidden="true">01—04<br>DELIVERY / SYSTEM</span>
           </div>
 
-          <div class="process-timeline reveal">
-            <article class="process-step">
-              <span class="step-number">01</span>
-              <h3>Discover</h3>
-              <p>Understand the idea, goals, users and requirements.</p>
-            </article>
+          <div class="process-system reveal" aria-label="SysEra project delivery pipeline">
+            <svg class="pipeline-route" viewBox="0 0 1200 220" preserveAspectRatio="none" aria-hidden="true">
+              <path class="pipeline-route-base" d="M0 110H230L270 82H520L560 110H810L850 82H1085L1130 110H1200" />
+              <path class="pipeline-route-energy" d="M0 110H230L270 82H520L560 110H810L850 82H1085L1130 110H1200" />
+            </svg>
+            <span class="pipeline-continuation" aria-hidden="true"><i></i></span>
 
-            <article class="process-step">
-              <span class="step-number">02</span>
-              <h3>Plan</h3>
-              <p>Define the structure, experience and technical approach.</p>
-            </article>
+            <div class="process-stages">
+              <article class="process-stage process-discover reveal process-reveal process-reveal-stage-one">
+                <div class="process-stage-head"><span class="process-number">01</span><span class="process-stage-code" aria-hidden="true">INPUT / SIGNAL</span></div>
+                <div class="process-visual discover-visual" aria-hidden="true">
+                  <span class="discover-source discover-source-one"></span><span class="discover-source discover-source-two"></span><span class="discover-source discover-source-three"></span>
+                  <span class="discover-path discover-path-one"><i></i></span><span class="discover-path discover-path-two"><i></i></span><span class="discover-path discover-path-three"><i></i></span>
+                  <span class="discover-core"></span>
+                </div>
+                <div class="process-copy"><h3>Discover</h3><p>Understand the idea, goals, users and requirements.</p></div>
+                <span class="stage-port" aria-hidden="true"></span>
+              </article>
 
-            <article class="process-step">
-              <span class="step-number">03</span>
-              <h3>Build</h3>
-              <p>Develop, test and refine the solution.</p>
-            </article>
+              <article class="process-stage process-plan reveal process-reveal process-reveal-stage-two">
+                <div class="process-stage-head"><span class="process-number">02</span><span class="process-stage-code" aria-hidden="true">MAP / ALIGN</span></div>
+                <div class="process-visual plan-visual" aria-hidden="true">
+                  <span class="plan-axis plan-axis-x"></span><span class="plan-axis plan-axis-y"></span>
+                  <span class="plan-unit plan-unit-one"></span><span class="plan-unit plan-unit-two"></span><span class="plan-unit plan-unit-three"></span>
+                </div>
+                <div class="process-copy"><h3>Plan</h3><p>Define the structure, experience and technical approach.</p></div>
+                <span class="stage-port" aria-hidden="true"></span>
+              </article>
 
-            <article class="process-step">
-              <span class="step-number">04</span>
-              <h3>Launch</h3>
-              <p>Deploy, optimize and deliver a production-ready product.</p>
-            </article>
+              <article class="process-stage process-build reveal process-reveal process-reveal-stage-three">
+                <div class="process-stage-head"><span class="process-number">03</span><span class="process-stage-code" aria-hidden="true">ASSEMBLE / TEST</span></div>
+                <div class="process-visual build-visual" aria-hidden="true">
+                  <svg viewBox="0 0 220 100">
+                    <path d="M28 50H78L105 24H162L192 50M78 50l27 26h57l30-26" />
+                    <circle cx="28" cy="50" r="4" /><circle cx="78" cy="50" r="5" /><circle cx="105" cy="24" r="4" /><circle cx="105" cy="76" r="4" /><circle cx="162" cy="24" r="4" /><circle cx="162" cy="76" r="4" /><circle class="build-output" cx="192" cy="50" r="6" />
+                    <circle class="build-pulse" cx="28" cy="50" r="3" />
+                  </svg>
+                </div>
+                <div class="process-copy"><h3>Build</h3><p>Develop, test and refine the solution.</p></div>
+                <span class="stage-port" aria-hidden="true"></span>
+              </article>
+
+              <article class="process-stage process-launch reveal process-reveal process-reveal-stage-four">
+                <div class="process-stage-head"><span class="process-number">04</span><span class="process-stage-code" aria-hidden="true">SHIP / CONTINUE</span></div>
+                <div class="process-visual launch-visual" aria-hidden="true">
+                  <span class="launch-entry"></span><span class="launch-line"><i></i></span><span class="launch-gate"></span><span class="launch-exit"></span><span class="launch-arrow"></span>
+                </div>
+                <div class="process-copy"><h3>Launch</h3><p>Deploy, optimize and deliver a production-ready product.</p></div>
+                <span class="stage-port" aria-hidden="true"></span>
+              </article>
+            </div>
           </div>
         </div>
       </section>
 
-      <section class="section tech-section">
-        <div class="container">
-          <div class="section-header reveal">
-            <p class="eyebrow">Technology</p>
-            <h2>Technologies We Work With</h2>
+      <section class="section tech-section" aria-labelledby="technology-title">
+        <div class="tech-atmosphere" aria-hidden="true">
+          <span class="tech-coordinate tech-coordinate-one">SYS / 04</span>
+          <span class="tech-coordinate tech-coordinate-two">ARCH / CONNECTED</span>
+          <span class="tech-angle tech-angle-one"></span>
+          <span class="tech-angle tech-angle-two"></span>
+        </div>
+
+        <div class="container tech-inner">
+          <div class="tech-intro">
+            <div>
+              <p class="eyebrow reveal">Technology</p>
+              <h2 id="technology-title" class="reveal">The right stack.<br><span>For the right job.</span></h2>
+            </div>
+            <p class="tech-summary reveal">We choose technology around the product, not the other way around.</p>
           </div>
 
-          <div class="tech-grid reveal" aria-label="Technology stack badges">
-            <span>JavaScript</span>
-            <span>PHP</span>
-            <span>Node.js</span>
-            <span>React</span>
-            <span>Next.js</span>
-            <span>WordPress</span>
-            <span>WooCommerce</span>
-            <span>MySQL</span>
-            <span>Supabase</span>
-            <span>REST APIs</span>
-            <span>Git</span>
-            <span>GitHub</span>
+          <div class="technology-ecosystem reveal" aria-label="SysEra technology ecosystem">
+            <svg class="ecosystem-links" viewBox="0 0 1200 560" preserveAspectRatio="none" aria-hidden="true">
+              <path class="ecosystem-link ecosystem-link-web" d="M248 142 H398 L520 255" />
+              <path class="ecosystem-signal ecosystem-signal-web" d="M248 142 H398 L520 255" />
+              <path class="ecosystem-link ecosystem-link-backend" d="M284 418 H410 L520 305" />
+              <path class="ecosystem-signal ecosystem-signal-backend" d="M284 418 H410 L520 305" />
+              <path class="ecosystem-link ecosystem-link-data" d="M952 142 H802 L680 255" />
+              <path class="ecosystem-signal ecosystem-signal-data" d="M952 142 H802 L680 255" />
+              <path class="ecosystem-link ecosystem-link-ai" d="M916 418 H790 L680 305" />
+              <path class="ecosystem-signal ecosystem-signal-ai" d="M916 418 H790 L680 305" />
+              <path class="ecosystem-orbit" d="M520 245 L555 210 H645 L680 245 V315 L645 350 H555 L520 315 Z" />
+            </svg>
+
+            <div class="tech-core" aria-label="SysEra stack core">
+              <span class="core-index">CORE / 00</span>
+              <strong>SYSERA</strong>
+              <span class="core-stack">/ STACK</span>
+              <span class="core-divider"></span>
+              <span class="core-status"><i></i> STATUS&nbsp;&nbsp;READY</span>
+              <span class="core-approach">FIT &gt; HYPE</span>
+            </div>
+
+            <section class="tech-layer tech-layer-web" aria-labelledby="layer-web-title">
+              <header><span>01</span><h3 id="layer-web-title">WEB &amp; COMMERCE</h3></header>
+              <ul class="tech-nodes tech-chain" aria-label="Web and commerce technologies">
+                <li tabindex="0">WordPress</li>
+                <li tabindex="0">WooCommerce</li>
+                <li tabindex="0">JavaScript</li>
+                <li tabindex="0">React</li>
+                <li tabindex="0">Next.js</li>
+              </ul>
+            </section>
+
+            <section class="tech-layer tech-layer-backend" aria-labelledby="layer-backend-title">
+              <header><span>02</span><h3 id="layer-backend-title">BACKEND &amp; SYSTEMS</h3></header>
+              <ul class="tech-nodes tech-chain" aria-label="Backend and systems technologies">
+                <li tabindex="0">PHP</li>
+                <li tabindex="0">Node.js</li>
+                <li tabindex="0">MySQL</li>
+                <li tabindex="0">REST APIs</li>
+              </ul>
+            </section>
+
+            <section class="tech-layer tech-layer-data" aria-labelledby="layer-data-title">
+              <header><span>03</span><h3 id="layer-data-title">DATA &amp; CLOUD</h3></header>
+              <ul class="tech-nodes" aria-label="Data and cloud technologies">
+                <li tabindex="0">Supabase</li>
+              </ul>
+              <span class="layer-note">DATA / SYNC / SCALE</span>
+            </section>
+
+            <section class="tech-layer tech-layer-ai" aria-labelledby="layer-ai-title">
+              <header><span>04</span><h3 id="layer-ai-title">AI &amp; AUTOMATION</h3></header>
+              <p>Intelligent capability connected across APIs, systems, data and web experiences.</p>
+              <span class="layer-note">CAPABILITY / INTEGRATED</span>
+            </section>
           </div>
         </div>
       </section>
@@ -306,23 +549,33 @@
       <section id="contact" class="section contact-section">
         <div class="container contact-wrap">
           <div class="contact-copy reveal">
-            <p class="eyebrow">Let's talk</p>
-            <h2>Have a Project in Mind?</h2>
-            <p class="contact-intro">Tell us what you're building, what you're trying to solve, or simply where you'd like to start.</p>
+            <p class="eyebrow">Let's build something</p>
+            <h2><span>Have an idea?</span><span>Let's make it real.</span></h2>
+            <p class="contact-intro">Tell us what you're building, where you're stuck, or what you want to improve. We'll take it from there.</p>
 
             <div class="contact-details">
               <div class="detail-item">
-                <span class="detail-label">Email</span>
+                <span class="detail-label">EMAIL</span>
                 <a href="mailto:hello@sysera.tech">hello@sysera.tech</a>
               </div>
               <div class="detail-item">
-                <span class="detail-label">Location</span>
+                <span class="detail-label">LOCATION</span>
                 <span>Remote / Worldwide</span>
+              </div>
+            </div>
+
+            <div class="contact-signal" aria-hidden="true">
+              <div class="signal-meta"><span>CHANNEL / OPEN</span><span>STATUS / READY</span></div>
+              <div class="signal-route">
+                <span>YOU</span>
+                <span class="signal-line"><i></i></span>
+                <span>SYSERA</span>
               </div>
             </div>
           </div>
 
           <form id="contact-form" class="contact-form reveal" novalidate>
+            <div class="form-heading" aria-hidden="true"><span>PROJECT / BRIEF</span><span>01—05</span></div>
             <div class="form-grid">
               <div class="form-field">
                 <label for="name">Name <span aria-hidden="true">*</span></label>
@@ -344,7 +597,7 @@
                   type="tel"
                   autocomplete="tel"
                   inputmode="tel"
-                  placeholder="+44 7700 900123"
+                  placeholder="+ Country code · Phone / WhatsApp"
                   required
                 />
               </div>
@@ -353,12 +606,12 @@
                 <label for="project-type">Project Type</label>
                 <select id="project-type" name="project_type">
                   <option value="">Select one</option>
-                  <option value="Website">Website</option>
-                  <option value="Web Application">Web Application</option>
-                  <option value="Software">Software</option>
-                  <option value="E-commerce">E-commerce</option>
-                  <option value="Automation">Automation</option>
+                  <option value="Website / E-commerce">Website / E-commerce</option>
+                  <option value="SEO / Digital Growth">SEO / Digital Growth</option>
+                  <option value="Custom Software">Custom Software</option>
+                  <option value="AI / Automation">AI / Automation</option>
                   <option value="API / Integration">API / Integration</option>
+                  <option value="UI/UX / Product Design">UI/UX / Product Design</option>
                   <option value="Other">Other</option>
                 </select>
               </div>
@@ -373,46 +626,68 @@
 
             <div id="form-status" class="form-status" role="status" aria-live="polite"></div>
 
-            <button class="btn btn-primary submit-btn" type="submit">Send Message</button>
+            <button class="btn btn-primary submit-btn" type="submit">Send Project Brief <span aria-hidden="true">→</span></button>
           </form>
         </div>
       </section>
     </main>
 
     <footer class="site-footer">
+      <div class="footer-signal" aria-hidden="true"><span><i></i></span></div>
+
       <div class="container footer-inner">
         <div class="footer-brand">
-          <img src="assets/logo/sys-era-logo-horizontal.svg" alt="SysEra logo" />
-          <p>Building modern digital solutions.</p>
+          <a href="#home" aria-label="SysEra home">
+            <img src="assets/logo/sys-era-logo.png" alt="SysEra — Build Tomorrow" />
+          </a>
+          <p>Digital products built to move businesses forward.</p>
+          <div class="footer-micro" aria-hidden="true">
+            <span>SYS / ERA</span>
+            <span>BUILD / GROW / EVOLVE</span>
+          </div>
         </div>
 
-        <nav class="footer-nav" aria-label="Footer navigation">
-          <a href="#home">Home</a>
-          <a href="#about">About</a>
-          <a href="#services">Services</a>
-          <a href="#process">Process</a>
-          <a href="#contact">Contact</a>
-        </nav>
+        <div class="footer-group">
+          <p class="footer-label">Navigate</p>
+          <nav class="footer-nav" aria-label="Footer navigation">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#process">Process</a>
+            <a href="#technology">Technology</a>
+          </nav>
+        </div>
 
-        <div class="social-links" aria-label="Social profiles">
-          <span>GitHub</span>
-          <span>LinkedIn</span>
+        <div class="footer-group footer-connect">
+          <p class="footer-label">Connect</p>
+          <a href="mailto:hello@sysera.tech">hello@sysera.tech</a>
         </div>
       </div>
 
       <div class="container footer-bottom">
-        <div class="fb-line" aria-hidden="true"></div>
-        <p>
-          &copy; 2026 SysEra. All rights reserved.
-          <span class="fb-dot" aria-hidden="true"></span>
-          <a href="https://wa.me/201002455834" target="_blank" rel="noopener noreferrer" class="fb-link">Don Charisma :)</a>
-        </p>
+        <p>&copy; 2026 SysEra. All rights reserved.</p>
+        <p class="footer-status"><span aria-hidden="true"></span>SYSERA / ONLINE</p>
       </div>
-
-
-
-      
     </footer>
+
+    <a
+      class="whatsapp-float"
+      href="https://wa.me/201002455834?text=Hello%20SysEra%2C%20I%27d%20like%20to%20discuss%20a%20project."
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Chat with SysEra on WhatsApp"
+    >
+      <span class="whatsapp-copy">
+        <small>CHANNEL / OPEN</small>
+        <strong>Chat on WhatsApp</strong>
+      </span>
+      <span class="whatsapp-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" role="img">
+          <path d="M12 2.75a9.25 9.25 0 0 0-7.93 14.02L2.8 21.25l4.57-1.2A9.25 9.25 0 1 0 12 2.75Z" />
+          <path d="M8.15 7.5c.2-.46.42-.47.62-.48h.54c.17 0 .39.06.5.34l.77 1.86c.08.2.04.37-.08.54l-.57.73c-.12.15-.24.29-.1.53.14.24.63 1.03 1.36 1.67.93.83 1.71 1.09 1.96 1.21.24.12.39.1.53-.06l.85-1c.16-.2.32-.16.54-.08l1.83.86c.23.11.38.16.44.26.05.1.05.59-.14 1.15-.19.56-1.12 1.07-1.54 1.14-.4.08-.93.11-1.5-.07a13.7 13.7 0 0 1-1.36-.5c-2.39-1.03-3.95-3.44-4.07-3.6-.11-.16-.97-1.29-.97-2.46 0-1.17.61-1.75.83-1.98Z" />
+        </svg>
+      </span>
+    </a>
 
     <script src="js/main.js"></script>
   </body>
