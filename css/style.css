@@ -21,10 +21,6 @@
   box-sizing: border-box;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 body {
   margin: 0;
   font-family: "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -75,6 +71,24 @@ button {
 .section {
   position: relative;
   padding: 6rem 0;
+}
+
+main {
+  opacity: 1;
+  transition: opacity 140ms ease;
+}
+
+main.view-transitioning {
+  opacity: 0.35;
+}
+
+main.focused-view > .section:not([hidden]) {
+  min-height: calc(100svh - 180px);
+  padding-top: clamp(8.5rem, 12vw, 10rem);
+}
+
+main > .section[hidden] {
+  display: none !important;
 }
 
 .hero {
@@ -3057,6 +3071,25 @@ button:disabled {
   width: clamp(160px, 15vw, 205px);
 }
 
+.footer-brand a {
+  transition: transform var(--transition);
+}
+
+.footer-brand a img {
+  transition: filter var(--transition), transform var(--transition);
+}
+
+.footer-brand a:hover,
+.footer-brand a:focus-visible {
+  transform: translateY(-1px);
+}
+
+.footer-brand a:hover img,
+.footer-brand a:focus-visible img {
+  filter: brightness(1.06) drop-shadow(0 0 10px rgba(101, 207, 255, 0.22));
+  transform: translateY(-1px);
+}
+
 .footer-brand > p {
   max-width: 360px;
   color: #b5bfca;
@@ -3124,6 +3157,16 @@ button:disabled {
 .footer-connect a:focus-visible {
   color: #a9dcf6;
   transform: translateX(3px);
+}
+
+.site-nav a[aria-current="page"],
+.footer-nav a[aria-current="page"] {
+  color: #9ddcff;
+}
+
+.site-nav a[aria-current="page"]::after {
+  opacity: 0.82;
+  transform: translate(-50%, 0) scale(0.9);
 }
 
 .footer-nav a:hover::after,
@@ -4582,10 +4625,6 @@ button:disabled {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-
   *,
   *::before,
   *::after {

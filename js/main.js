@@ -5,10 +5,16 @@ const hero = document.querySelector('.hero');
 const revealItems = document.querySelectorAll('.reveal');
 const form = document.getElementById('contact-form');
 const formStatus = document.getElementById('form-status');
+const main = document.getElementById('home');
+const viewSections = main ? Array.from(main.children).filter((child) => child.tagName === 'SECTION') : [];
+const primaryViewLinks = document.querySelectorAll('.site-header [data-view-route], .site-footer [data-view-route]');
+const currentViewLinks = document.querySelectorAll('.site-nav [data-view-route], .footer-nav [data-view-route]');
+const viewRouter = window.SysEraViewRouter;
 const mobileHeaderQuery = window.matchMedia('(max-width: 760px)');
 const MOBILE_HEADER_SCROLL_THRESHOLD = 12;
 let scrollFrame = null;
 let headerScrollAnchor = window.scrollY;
+let viewTransitionTimer = null;
 
 const setMobileHeaderVisibility = () => {
   if (!header) return;
@@ -52,6 +58,100 @@ const requestScrollUpdate = () => {
     scrollFrame = null;
   });
 };
+
+const applyCurrentView = (view, { focusHeading = false, transition = false } = {}) => {
+  if (!viewRouter || !main) return;
+
+  const render = () => {
+    viewRouter.applyViewState(view, {
+      sections: viewSections,
+      main,
+      body: document.body,
+      links: currentViewLinks
+    });
+
+    window.scrollTo(0, 0);
+    header?.classList.remove('header-hidden');
+    headerScrollAnchor = 0;
+    setHeaderState();
+
+    if (focusHeading) {
+      const activeSection = view.mode === 'focused'
+        ? viewSections.find((section) => section.id === view.route)
+        : viewSections[0];
+      const heading = activeSection?.querySelector('h1, h2');
+      if (heading) {
+        heading.setAttribute('tabindex', '-1');
+        heading.focus({ preventScroll: true });
+      }
+    }
+
+    requestAnimationFrame(() => main.classList.remove('view-transitioning'));
+  };
+
+  if (!transition || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    render();
+    return;
+  }
+
+  window.clearTimeout(viewTransitionTimer);
+  main.classList.add('view-transitioning');
+  viewTransitionTimer = window.setTimeout(render, 120);
+};
+
+const initViewNavigation = () => {
+  if (!viewRouter || !main) return;
+
+  if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+  }
+
+  primaryViewLinks.forEach((link) => {
+    link.addEventListener('click', (event) => {
+      const route = link.dataset.viewRoute;
+      const view = viewRouter.resolveView(route === 'home' ? '' : `#${route}`);
+      event.preventDefault();
+
+      history.pushState({ view: view.route || 'home' }, '', viewRouter.buildViewUrl(view.route, window.location));
+      applyCurrentView(view, { focusHeading: true, transition: true });
+    });
+  });
+
+  main.querySelectorAll('a[href^="#"]:not([data-view-route])').forEach((link) => {
+    link.addEventListener('click', (event) => {
+      const hash = link.getAttribute('href') || '';
+      const useInPageNavigation = viewRouter.shouldUseInPageNavigation({
+        isFocused: main.classList.contains('focused-view'),
+        hasViewRoute: link.hasAttribute('data-view-route'),
+        hash
+      });
+
+      if (!useInPageNavigation) return;
+
+      const target = document.querySelector(hash);
+      if (!target) return;
+
+      event.preventDefault();
+      target.scrollIntoView({ block: 'start' });
+    });
+  });
+
+  window.addEventListener('popstate', () => {
+    applyCurrentView(viewRouter.resolveView(window.location.hash), { transition: true });
+  });
+
+  window.addEventListener('hashchange', () => {
+    applyCurrentView(viewRouter.resolveView(window.location.hash), { transition: true });
+  });
+};
+
+if (viewRouter && main) {
+  const initialView = viewRouter.resolveView(window.location.hash);
+  if (window.location.hash === '#home') {
+    history.replaceState({ view: 'home' }, '', viewRouter.buildViewUrl(null, window.location));
+  }
+  applyCurrentView(initialView);
+}
 
 const initNavigation = () => {
   if (!navToggle || !siteNav) return;
@@ -217,6 +317,7 @@ window.addEventListener('scroll', requestScrollUpdate, { passive: true });
 window.addEventListener('resize', requestScrollUpdate, { passive: true });
 window.addEventListener('load', () => {
   setHeaderState();
+  initViewNavigation();
   initNavigation();
   initHeroInteraction();
   initRevealObserver();

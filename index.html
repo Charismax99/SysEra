@@ -26,19 +26,19 @@
     <header class="site-header" id="top">
       <div class="container nav-wrap">
         <div class="nav-shell">
-          <a class="brand" href="#home" aria-label="SysEra home">
+          <a class="brand" href="#home" data-view-route="home" aria-label="SysEra home">
             <img src="assets/logo/sys-era-logo.png" alt="SysEra — Build Tomorrow" />
           </a>
 
           <nav class="site-nav" id="site-menu" aria-label="Main navigation">
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#services">Services</a>
-            <a href="#process">Process</a>
-            <a href="#contact">Contact</a>
+            <a href="#home" data-view-route="home">Home</a>
+            <a href="#about" data-view-route="about">About</a>
+            <a href="#services" data-view-route="services">Services</a>
+            <a href="#process" data-view-route="process">Process</a>
+            <a href="#contact" data-view-route="contact">Contact</a>
           </nav>
 
-          <a href="#contact" class="btn btn-primary nav-cta">Let's Talk</a>
+          <a href="#contact" class="btn btn-primary nav-cta" data-view-route="contact">Let's Talk</a>
 
           <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Open navigation menu">
             <span></span>
@@ -469,7 +469,7 @@
         </div>
       </section>
 
-      <section class="section tech-section" aria-labelledby="technology-title">
+      <section id="technology" class="section tech-section" aria-labelledby="technology-title">
         <div class="tech-atmosphere" aria-hidden="true">
           <span class="tech-coordinate tech-coordinate-one">SYS / 04</span>
           <span class="tech-coordinate tech-coordinate-two">ARCH / CONNECTED</span>
@@ -637,7 +637,7 @@
 
       <div class="container footer-inner">
         <div class="footer-brand">
-          <a href="#home" aria-label="SysEra home">
+          <a href="#home" data-view-route="home" aria-label="SysEra home">
             <img src="assets/logo/sys-era-logo.png" alt="SysEra — Build Tomorrow" />
           </a>
           <p>Digital products built to move businesses forward.</p>
@@ -650,11 +650,11 @@
         <div class="footer-group">
           <p class="footer-label">Navigate</p>
           <nav class="footer-nav" aria-label="Footer navigation">
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#services">Services</a>
-            <a href="#process">Process</a>
-            <a href="#technology">Technology</a>
+            <a href="#home" data-view-route="home">Home</a>
+            <a href="#about" data-view-route="about">About</a>
+            <a href="#services" data-view-route="services">Services</a>
+            <a href="#process" data-view-route="process">Process</a>
+            <a href="#technology" data-view-route="technology">Technology</a>
           </nav>
         </div>
 
@@ -689,6 +689,7 @@
       </span>
     </a>
 
+    <script src="js/view-router.js"></script>
     <script src="js/main.js"></script>
   </body>
 </html>
