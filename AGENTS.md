@@ -81,6 +81,8 @@ Adding a future project should require only:
 1. adding its optimized image assets to the portfolio image directory
 2. adding one project object to `portfolio-data.js`
 
+Optimized portfolio images are required project files and must be included when the project is committed or pushed.
+
 Do not manually duplicate portfolio tabs or project panels.
 Do not restructure the portfolio architecture when simply adding a project.
 Do not hardcode project counts.
@@ -105,7 +107,15 @@ Do not repeatedly inspect unrelated files after the relevant implementation has 
 
 Do not commit or push unless explicitly requested.
 
-Never use broad staging such as `git add .` when a targeted file list is appropriate.
+New files intentionally created or added for the current requested feature are part of that feature even when Git reports them as untracked.
+
+When committing or pushing a completed feature, include every file required for the feature to work, including new assets such as images. Do not exclude a required task-related file only because it is untracked.
+
+Continue excluding unrelated untracked files.
+
+Before committing, verify that local assets referenced by the changed implementation are included in the intended commit.
+
+Always use targeted staging. Never use broad staging such as `git add .`.
 
 Do not add unrelated files to a commit.
 
