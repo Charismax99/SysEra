@@ -546,6 +546,31 @@
         </div>
       </section>
 
+      <section id="selected-work" class="section work-section" aria-labelledby="selected-work-title" data-portfolio-viewer>
+        <div class="work-atmosphere" aria-hidden="true">
+          <span class="work-grid"></span>
+          <span class="work-coordinate work-coordinate-one">SYS / WORK / 01</span>
+          <span class="work-coordinate work-coordinate-two">CASE / SELECTED</span>
+        </div>
+
+        <div class="container work-inner">
+          <header class="work-intro">
+            <p class="eyebrow reveal work-reveal work-reveal-eyebrow">SELECTED WORK</p>
+            <h2 id="selected-work-title">
+              <span class="work-headline-line reveal work-reveal work-reveal-line-one">Work built to be used.</span>
+              <span class="work-headline-line work-headline-accent reveal work-reveal work-reveal-line-two">Not just viewed.</span>
+            </h2>
+            <p class="work-summary reveal work-reveal work-reveal-summary">A selection of digital experiences shaped around real businesses, real users and real goals.</p>
+          </header>
+
+          <div class="work-selector reveal">
+            <p class="work-selector-label">SELECT PROJECT</p>
+            <nav class="work-tabs" role="tablist" aria-label="Selected projects" data-project-tabs></nav>
+          </div>
+          <div data-project-panels></div>
+        </div>
+      </section>
+
       <section id="contact" class="section contact-section">
         <div class="container contact-wrap">
           <div class="contact-copy reveal">
@@ -690,6 +715,8 @@
     </a>
 
     <script src="js/view-router.js"></script>
+    <script src="js/portfolio-data.js"></script>
+    <script src="js/portfolio-viewer.js"></script>
     <script src="js/main.js"></script>
   </body>
 </html>
