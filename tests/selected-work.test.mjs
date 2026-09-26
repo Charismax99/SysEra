@@ -32,3 +32,9 @@ test('portfolio data loads before the viewer', () => {
   assert.ok(dataIndex >= 0, 'Portfolio data script should be loaded');
   assert.ok(viewerIndex > dataIndex, 'Portfolio viewer should load after its data');
 });
+
+test('header and footer navigation link to the focused Selected Work route', () => {
+  const workLinks = [...html.matchAll(/<a\b[^>]*href="#selected-work"[^>]*data-view-route="selected-work"[^>]*>Work<\/a>/g)];
+
+  assert.equal(workLinks.length, 2);
+});

@@ -4916,11 +4916,12 @@ button:disabled {
   gap: 0.85rem;
   align-items: center;
   min-width: 150px;
-  padding: 0 0 0.9rem;
-  border: 0;
-  background: transparent;
+  padding: 0.7rem 0.85rem 0.85rem;
+  border: 1px solid rgba(157, 220, 255, 0.09);
+  background: rgba(157, 220, 255, 0.018);
   color: rgba(245, 247, 250, 0.36);
   text-align: left;
+  transition: color var(--transition), background-color var(--transition), border-color var(--transition);
 }
 .work-tab::after {
   content: "";
@@ -4937,13 +4938,22 @@ button:disabled {
 }
 .work-tab span { color: rgba(157, 220, 255, 0.48); font-size: 0.56rem; font-weight: 700; letter-spacing: 0.18em; }
 .work-tab strong { font-family: "Space Grotesk", sans-serif; font-size: 0.74rem; letter-spacing: 0.16em; }
-.work-tab.active { color: var(--text); }
+.work-tab.active {
+  border-color: rgba(157, 220, 255, 0.24);
+  background: rgba(157, 220, 255, 0.065);
+  color: var(--text);
+}
 .work-tab.active span { color: var(--accent-strong); }
 .work-tab.active::after { transform: scaleX(1); }
-.work-tab:focus-visible { outline: 2px solid rgba(157, 220, 255, 0.82); outline-offset: 5px; }
+.work-tab:focus-visible {
+  outline: 2px solid rgba(157, 220, 255, 0.82);
+  outline-offset: 3px;
+  border-color: rgba(157, 220, 255, 0.34);
+  background: rgba(157, 220, 255, 0.055);
+}
 
 .work-project { margin-top: clamp(2.25rem, 3.25vw, 3.5rem); padding-top: 1.65rem; }
-.work-project-number { top: -4.25rem; font-size: clamp(10rem, 23vw, 20rem); }
+.work-project-number { top: -4.25rem; font-size: clamp(10rem, 23vw, 20rem); pointer-events: none; }
 .work-project-description { margin-top: 1.25rem; }
 .work-capabilities { margin-top: 1.25rem; }
 .work-live-link { margin-top: 1.35rem; }
@@ -5028,6 +5038,9 @@ button:disabled {
 .work-intro h2 { font-size: clamp(2.65rem, 4.25vw, 4.15rem); }
 .work-selector { margin-top: clamp(2rem, 3vw, 2.8rem); }
 .work-selector-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   margin: 0 0 0.8rem;
   color: rgba(157, 220, 255, 0.52);
   font-family: "Space Grotesk", sans-serif;
@@ -5035,10 +5048,11 @@ button:disabled {
   font-weight: 700;
   letter-spacing: 0.22em;
 }
-.work-tabs { margin-top: 0; gap: clamp(2rem, 4vw, 4.5rem); scroll-snap-type: x proximity; }
+.work-swipe-cue { display: none; }
+.work-tabs { margin-top: 0; gap: clamp(0.5rem, 1vw, 0.875rem); scroll-snap-type: x proximity; }
 .work-tab {
-  flex: 1 0 240px;
-  min-width: 240px;
+  flex: 1 1 0;
+  min-width: 190px;
   max-width: none;
   gap: 0.6rem;
   cursor: pointer;
@@ -5046,13 +5060,17 @@ button:disabled {
 }
 .work-tab span { white-space: nowrap; }
 .work-tab strong { white-space: nowrap; }
-.work-tab:not(.active):hover { color: rgba(245, 247, 250, 0.86); }
+.work-tab:not(.active):hover {
+  border-color: rgba(157, 220, 255, 0.18);
+  background: rgba(157, 220, 255, 0.04);
+  color: rgba(245, 247, 250, 0.86);
+}
 .work-tab:not(.active):hover span { color: rgba(157, 220, 255, 0.75); }
 .work-project { margin-top: clamp(1.8rem, 2.6vw, 2.7rem); }
 .work-project:not([hidden]) { animation: work-project-enter 280ms ease both; }
 .work-project-info h3 {
   max-width: 760px;
-  font-size: clamp(3rem, 5.6vw, 5.1rem);
+  font-size: clamp(2.8rem, 5.1vw, 4.7rem);
   overflow-wrap: anywhere;
 }
 .work-project-info { width: min(100%, 760px); }
@@ -5061,12 +5079,21 @@ button:disabled {
   to { opacity: 1; transform: translateY(0); }
 }
 
+@media (min-width: 761px) {
+  .work-tabs { width: calc(100% - 2rem); }
+  .work-project-number { top: -3.25rem; right: 2.25rem; font-size: clamp(8.5rem, 18.5vw, 16rem); }
+}
+
 @media (max-width: 760px) {
   .work-intro h2 { font-size: clamp(2.15rem, 9vw, 3rem); }
   .work-selector { margin-top: 1.65rem; }
   .work-selector-label { margin-bottom: 0.65rem; }
-  .work-tabs { gap: 1.8rem; overscroll-behavior-x: contain; }
-  .work-tab { flex-basis: auto; min-width: max-content; padding-right: 1.5rem; }
+  .work-swipe-cue:not([hidden]) {
+    display: inline;
+    color: rgba(157, 220, 255, 0.7);
+  }
+  .work-tabs { gap: 0.75rem; overscroll-behavior-x: contain; }
+  .work-tab { flex: 0 0 min(72vw, 260px); min-width: 0; padding-right: 0.85rem; }
   .work-project { margin-top: 1.75rem; }
   .work-project-info h3 { font-size: clamp(2.55rem, 12vw, 3.7rem); line-height: 0.98; }
 }

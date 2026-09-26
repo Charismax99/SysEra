@@ -90,6 +90,25 @@
     return currentId;
   };
 
+  const shouldShowScrollCue = ({ scrollWidth, clientWidth, scrollLeft }) => {
+    const maxScrollLeft = scrollWidth - clientWidth;
+    return maxScrollLeft > 1 && scrollLeft < maxScrollLeft - 1;
+  };
+
+  const bindScrollCue = (viewer) => {
+    const tablist = viewer.querySelector('[data-project-tabs]');
+    const cue = viewer.querySelector('[data-project-swipe-cue]');
+    if (!tablist || !cue) return;
+
+    const updateCue = () => {
+      cue.hidden = !shouldShowScrollCue(tablist);
+    };
+
+    tablist.addEventListener('scroll', updateCue, { passive: true });
+    global.addEventListener('resize', updateCue);
+    global.requestAnimationFrame(updateCue);
+  };
+
   const bindProjectTabs = (viewer) => {
     const tabs = Array.from(viewer.querySelectorAll('[data-project-tab]'));
     const projectIds = tabs.map((tab) => tab.dataset.projectTab);
@@ -110,10 +129,11 @@
     scope.querySelectorAll('[data-portfolio-viewer]').forEach((viewer) => {
       renderProjects(viewer, projects);
       bindProjectTabs(viewer);
+      bindScrollCue(viewer);
     });
   };
 
-  global.SysEraPortfolioViewer = { activateProject, getNextProjectId, init, renderProjects };
+  global.SysEraPortfolioViewer = { activateProject, getNextProjectId, init, renderProjects, shouldShowScrollCue };
 
   if (typeof document !== 'undefined') init(document);
 })(globalThis);

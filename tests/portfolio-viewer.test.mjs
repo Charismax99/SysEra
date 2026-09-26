@@ -28,6 +28,23 @@ test('portfolio data defines every project once with four complete images', () =
   });
 });
 
+test('Al Waylia is available as project 03 with its four ecommerce views', () => {
+  const project = projects.find((item) => item.id === 'alwaylia');
+
+  assert.ok(project);
+  assert.equal(project.number, '03');
+  assert.equal(project.name, 'Al Waylia');
+  assert.equal(project.category, 'E-COMMERCE EXPERIENCE');
+  assert.equal(project.liveUrl, 'https://alwaylia.com/');
+  assert.deepEqual(Array.from(project.capabilities), ['E-COMMERCE', 'WOOCOMMERCE', 'WORDPRESS']);
+  assert.deepEqual(Array.from(project.images, (image) => image.src), [
+    'assets/images/portfolio/alwaylia-home.webp',
+    'assets/images/portfolio/alwaylia-shop.webp',
+    'assets/images/portfolio/alwaylia-collection.webp',
+    'assets/images/portfolio/alwaylia-product-detail.webp'
+  ]);
+});
+
 test('renderProjects derives accessible tabs and panels from portfolio data', () => {
   const tabsHost = { innerHTML: '' };
   const panelsHost = { innerHTML: '' };
@@ -90,4 +107,13 @@ test('getNextProjectId supports wrapping arrow keys and tablist boundaries', () 
   assert.equal(viewer.getNextProjectId(ids, ids[0], 'ArrowLeft'), ids.at(-1));
   assert.equal(viewer.getNextProjectId(ids, ids[1], 'Home'), ids[0]);
   assert.equal(viewer.getNextProjectId(ids, ids[0], 'End'), ids.at(-1));
+});
+
+test('shouldShowScrollCue only signals when hidden projects remain to the right', () => {
+  const { shouldShowScrollCue } = viewer;
+
+  assert.equal(shouldShowScrollCue({ scrollWidth: 720, clientWidth: 360, scrollLeft: 0 }), true);
+  assert.equal(shouldShowScrollCue({ scrollWidth: 720, clientWidth: 360, scrollLeft: 180 }), true);
+  assert.equal(shouldShowScrollCue({ scrollWidth: 720, clientWidth: 360, scrollLeft: 360 }), false);
+  assert.equal(shouldShowScrollCue({ scrollWidth: 360, clientWidth: 360, scrollLeft: 0 }), false);
 });

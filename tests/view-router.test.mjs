@@ -50,6 +50,7 @@ test('resolveView accepts only supported focused routes', () => {
   assert.equal(JSON.stringify(resolveView('#home')), '{"mode":"home","route":null}');
   assert.equal(JSON.stringify(resolveView('#services')), '{"mode":"focused","route":"services"}');
   assert.equal(JSON.stringify(resolveView('#technology')), '{"mode":"focused","route":"technology"}');
+  assert.equal(JSON.stringify(resolveView('#selected-work')), '{"mode":"focused","route":"selected-work"}');
   assert.equal(JSON.stringify(resolveView('#why-us')), '{"mode":"home","route":null}');
 });
 

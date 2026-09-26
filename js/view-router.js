@@ -1,5 +1,5 @@
 (function attachViewRouter(global) {
-  const supportedRoutes = new Set(['about', 'services', 'process', 'technology', 'contact']);
+  const supportedRoutes = new Set(['about', 'services', 'process', 'technology', 'selected-work', 'contact']);
 
   const resolveView = (hash) => {
     const route = String(hash || '').replace(/^#/, '').toLowerCase();
