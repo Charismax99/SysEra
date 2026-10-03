@@ -44,6 +44,21 @@
         { src: 'assets/images/portfolio/alwaylia-collection.webp', width: 1725, height: 1251, alt: 'Al Waylia featured fashion collection', objectPosition: '50% 0%' },
         { src: 'assets/images/portfolio/alwaylia-product-detail.webp', width: 1819, height: 1257, alt: 'Al Waylia product detail page', objectPosition: '50% 0%' }
       ]
+    },
+    {
+      id: 'hayat-academy',
+      number: '04',
+      name: 'Hayat Academy',
+      category: 'LEARNING & E-COMMERCE',
+      description: 'A warm, family-friendly learning platform for children, bringing courses, educational resources and online shopping together in one place. We built an Arabic-first experience that helps parents explore programs, discover learning materials and enroll with ease.',
+      capabilities: ['E-LEARNING', 'E-COMMERCE', 'ARABIC-FIRST'],
+      liveUrl: 'https://hayateg.com/',
+      images: [
+        { src: 'assets/images/portfolio/hayat-academy-home.webp', width: 2520, height: 1335, alt: 'Hayat Academy Arabic home page for children and families', objectPosition: '50% 0%' },
+        { src: 'assets/images/portfolio/hayat-academy-course.webp', width: 2538, height: 1524, alt: 'Hayat Academy children’s course detail and learning resources', objectPosition: '50% 0%' },
+        { src: 'assets/images/portfolio/hayat-academy-checkout.webp', width: 2532, height: 1348, alt: 'Hayat Academy Arabic course checkout and payment form', objectPosition: '50% 0%' },
+        { src: 'assets/images/portfolio/hayat-academy-about.webp', width: 2535, height: 1351, alt: 'Hayat Academy Falfelo program and learning outcomes section', objectPosition: '50% 0%' }
+      ]
     }
   ];
 })(globalThis);
