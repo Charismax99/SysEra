@@ -611,8 +611,14 @@
             <p class="work-selector-label">
               <span>SELECT PROJECT</span>
               <span class="work-swipe-cue" data-project-swipe-cue hidden>SWIPE →</span>
+              <span class="work-tab-controls" role="group" aria-label="Scroll through projects">
+                <button class="work-tab-scroll-button" type="button" data-project-scroll="previous" aria-label="Scroll to previous project" aria-controls="selected-project-tabs" disabled><span aria-hidden="true">←</span></button>
+                <button class="work-tab-scroll-button" type="button" data-project-scroll="next" aria-label="Scroll to next project" aria-controls="selected-project-tabs"><span aria-hidden="true">→</span></button>
+              </span>
             </p>
-            <nav class="work-tabs" role="tablist" aria-label="Selected projects" data-project-tabs></nav>
+            <div class="work-tabs-shell" data-project-tabs-shell>
+              <nav class="work-tabs" id="selected-project-tabs" role="tablist" aria-label="Selected projects" data-project-tabs></nav>
+            </div>
           </div>
           <div data-project-panels></div>
         </div>

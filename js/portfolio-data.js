@@ -59,6 +59,76 @@
         { src: 'assets/images/portfolio/hayat-academy-checkout.webp', width: 2532, height: 1348, alt: 'Hayat Academy Arabic course checkout and payment form', objectPosition: '50% 0%' },
         { src: 'assets/images/portfolio/hayat-academy-about.webp', width: 2535, height: 1351, alt: 'Hayat Academy Falfelo program and learning outcomes section', objectPosition: '50% 0%' }
       ]
+    },
+    {
+      id: 'aurem-capital',
+      number: '05',
+      name: 'Aurem Capital',
+      category: 'DIGITAL EXPERIENCE',
+      description: 'A refined digital presence for a trading and market research firm covering global financial markets. The website brings market insights, research, and a disciplined approach to risk and execution into a clear experience for prospective clients.',
+      capabilities: ['WEB DESIGN', 'UI/UX', 'FRONT-END'],
+      liveUrl: 'https://aurem.trade/',
+      images: [
+        { src: 'assets/images/portfolio/aurem-capital-home.webp', width: 2523, height: 1194, alt: 'Aurem Capital website home page', objectPosition: '50% 46%' },
+        { src: 'assets/images/portfolio/aurem-capital-about.webp', width: 2529, height: 1117, alt: 'Aurem Capital about section with market perspective illustration', objectPosition: '50% 44%' },
+        { src: 'assets/images/portfolio/aurem-capital-markets.webp', width: 2523, height: 1189, alt: 'Aurem Capital global markets section', objectPosition: '50% 0%' },
+        { src: 'assets/images/portfolio/aurem-capital-approach.webp', width: 2523, height: 1293, alt: 'Aurem Capital research, analysis, risk management and execution approach', objectPosition: '50% 0%' }
+      ]
+    },
+    {
+      id: 'netos',
+      number: '06',
+      name: 'Netos',
+      category: 'BRAND EXPERIENCE',
+      description: 'An Arabic-first brand website for Netos, an energy drink made for bold flavor and high-energy moments. The experience brings the brand story, product flavors and ordering options together in a vibrant showcase for the Iraqi market.',
+      capabilities: ['ARABIC-FIRST', 'BRAND STORYTELLING', 'PRODUCT SHOWCASE'],
+      liveUrl: 'https://netosco.com/ar/home/',
+      images: [
+        { src: 'assets/images/portfolio/netos-home.webp', width: 2517, height: 1336, alt: 'Netos Arabic home page featuring the energy drink brand and products', objectPosition: '50% 0%' },
+        { src: 'assets/images/portfolio/netos-about-and-flavors.webp', width: 1855, height: 1288, alt: 'Netos brand story and energy drink flavor highlights', objectPosition: '50% 0%' },
+        { src: 'assets/images/portfolio/netos-flavors.webp', width: 1858, height: 1210, alt: 'Netos Arabic flavor selection and product details', objectPosition: '50% 0%' },
+        { src: 'assets/images/portfolio/netos-product-showcase.webp', width: 2523, height: 871, alt: 'Netos product range and ordering section', objectPosition: '50% 0%' }
+      ]
+    },
+    {
+      id: 'coming-soon-07',
+      number: '07',
+      name: 'Coming Soon',
+      category: 'UPCOMING PROJECT',
+      description: 'New projects are being added to our selected work. Check back soon.',
+      capabilities: [],
+      images: [],
+      placeholder: true
+    },
+    {
+      id: 'coming-soon-08',
+      number: '08',
+      name: 'Coming Soon',
+      category: 'UPCOMING PROJECT',
+      description: 'New projects are being added to our selected work. Check back soon.',
+      capabilities: [],
+      images: [],
+      placeholder: true
+    },
+    {
+      id: 'coming-soon-09',
+      number: '09',
+      name: 'Coming Soon',
+      category: 'UPCOMING PROJECT',
+      description: 'New projects are being added to our selected work. Check back soon.',
+      capabilities: [],
+      images: [],
+      placeholder: true
+    },
+    {
+      id: 'coming-soon-10',
+      number: '10',
+      name: 'Coming Soon',
+      category: 'UPCOMING PROJECT',
+      description: 'New projects are being added to our selected work. Check back soon.',
+      capabilities: [],
+      images: [],
+      placeholder: true
     }
   ];
 })(globalThis);
