@@ -12,15 +12,22 @@ if (viewerSource) vm.runInContext(viewerSource, context);
 const projects = context.SysEraPortfolioProjects;
 const viewer = context.SysEraPortfolioViewer;
 
-test('portfolio data defines every project once with four complete images', () => {
+test('portfolio data defines featured and upcoming projects once', () => {
   assert.ok(Array.isArray(projects));
   assert.ok(projects.length >= 2);
 
   projects.forEach((project) => {
     assert.match(project.id, /^[a-z0-9]+(?:-[a-z0-9]+)*$/);
-    assert.ok(project.number && project.name && project.category && project.description && project.liveUrl);
-    assert.ok(Array.isArray(project.capabilities) && project.capabilities.length > 0);
-    assert.equal(project.images.length, 4);
+    assert.ok(project.number && project.name && project.category && project.description);
+    assert.ok(Array.isArray(project.capabilities));
+    if (project.placeholder) {
+      assert.equal(project.images.length, 0);
+      assert.equal(project.capabilities.length, 0);
+    } else {
+      assert.ok(project.liveUrl);
+      assert.ok(project.capabilities.length > 0);
+      assert.equal(project.images.length, 4);
+    }
     project.images.forEach((image) => {
       assert.ok(image.src.startsWith('assets/images/portfolio/'));
       assert.ok(image.alt);
@@ -62,15 +69,19 @@ test('renderProjects derives accessible tabs and panels from portfolio data', ()
     assert.match(panelsHost.innerHTML, new RegExp(`id="work-panel-${project.id}"`));
     assert.match(panelsHost.innerHTML, new RegExp(`aria-labelledby="work-tab-${project.id}"`));
     assert.match(panelsHost.innerHTML, new RegExp(`data-project-panel="${project.id}"`));
-    assert.equal((panelsHost.innerHTML.split(project.liveUrl).length - 1), 2);
-    assert.equal((panelsHost.innerHTML.match(new RegExp(`data-project-image="${project.id}"`, 'g')) ?? []).length, 4);
+    if (project.placeholder) {
+      assert.doesNotMatch(panelsHost.innerHTML, new RegExp(`data-project-image="${project.id}"`));
+    } else {
+      assert.equal((panelsHost.innerHTML.split(project.liveUrl).length - 1), 2);
+      assert.equal((panelsHost.innerHTML.match(new RegExp(`data-project-image="${project.id}"`, 'g')) ?? []).length, 4);
+    }
     const tabMarkup = tabsHost.innerHTML.match(new RegExp(`<button[^>]*data-project-tab="${project.id}"[^>]*>`))?.[0] ?? '';
     assert.match(tabMarkup, new RegExp(`aria-selected="${active}"`));
   });
 
   assert.equal((tabsHost.innerHTML.match(/role="tab"/g) ?? []).length, projects.length);
   assert.equal((panelsHost.innerHTML.match(/role="tabpanel"/g) ?? []).length, projects.length);
-  assert.equal((panelsHost.innerHTML.match(/<img\b/g) ?? []).length, projects.length * 4);
+  assert.equal((panelsHost.innerHTML.match(/<img\b/g) ?? []).length, projects.reduce((total, project) => total + project.images.length, 0));
   assert.equal((panelsHost.innerHTML.match(/\shidden/g) ?? []).length, projects.length - 1);
 });
 

@@ -12,6 +12,8 @@ const currentViewLinks = document.querySelectorAll('.site-nav [data-view-route],
 const viewRouter = window.SysEraViewRouter;
 const mobileHeaderQuery = window.matchMedia('(max-width: 760px)');
 const MOBILE_HEADER_SCROLL_THRESHOLD = 12;
+const openMenuLabel = navToggle?.dataset.openLabel || 'Open navigation menu';
+const closeMenuLabel = navToggle?.dataset.closeLabel || 'Close navigation menu';
 let scrollFrame = null;
 let headerScrollAnchor = window.scrollY;
 let viewTransitionTimer = null;
@@ -158,14 +160,14 @@ const initNavigation = () => {
 
   const closeMenu = () => {
     navToggle.setAttribute('aria-expanded', 'false');
-    navToggle.setAttribute('aria-label', 'Open navigation menu');
+    navToggle.setAttribute('aria-label', openMenuLabel);
     siteNav.classList.remove('open');
   };
 
   navToggle.addEventListener('click', (event) => {
     const isOpen = navToggle.getAttribute('aria-expanded') === 'true';
     navToggle.setAttribute('aria-expanded', String(!isOpen));
-    navToggle.setAttribute('aria-label', isOpen ? 'Open navigation menu' : 'Close navigation menu');
+    navToggle.setAttribute('aria-label', isOpen ? openMenuLabel : closeMenuLabel);
     siteNav.classList.toggle('open', !isOpen);
     header?.classList.remove('header-hidden');
 
@@ -246,6 +248,27 @@ const setStatus = (type, message) => {
 const initForm = () => {
   if (!form) return;
 
+  const isArabic = document.documentElement.lang === 'ar';
+  const submitButton = form.querySelector('button[type="submit"]');
+  const submitButtonLabel = submitButton?.innerHTML;
+  const messages = isArabic ? {
+    required: 'يرجى تعبئة الحقول المطلوبة.',
+    email: 'يرجى إدخال بريد إلكتروني صحيح.',
+    phone: 'يرجى إدخال رقم هاتف أو واتساب صحيح.',
+    message: 'اكتب رسالة لا تقل عن 10 أحرف.',
+    sending: 'جارٍ الإرسال...',
+    unable: 'تعذّر إرسال رسالتك الآن. حاول مرة أخرى لاحقًا.',
+    success: 'وصلتنا رسالتك بنجاح، وسنتواصل معك قريبًا.'
+  } : {
+    required: 'Please complete all required fields.',
+    email: 'Please enter a valid email address.',
+    phone: 'Please enter a valid phone or WhatsApp number.',
+    message: 'Your message should be at least 10 characters long.',
+    sending: 'Sending...',
+    unable: 'Unable to send your message right now.',
+    success: 'Your message was sent successfully.'
+  };
+
   form.addEventListener('submit', async (event) => {
     event.preventDefault();
 
@@ -255,38 +278,36 @@ const initForm = () => {
     const phone = String(formData.get('phone') || '').trim();
     const message = String(formData.get('message') || '').trim();
 
-  if (!name || !email || !phone || !message) {
-      setStatus('error', 'Please complete all required fields.');
+    if (!name || !email || !phone || !message) {
+      setStatus('error', messages.required);
       return;
     }
 
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailPattern.test(email)) {
-      setStatus('error', 'Please enter a valid email address.');
+      setStatus('error', messages.email);
       return;
     }
 
     const phonePattern = /^[+\d][\d\s().-]{7,}$/;
 
-  if (!phonePattern.test(phone)) {
-  setStatus('error', 'Please enter a valid phone or WhatsApp number.');
-  return;
-}
-
-    
-    if (message.length < 10) {
-      setStatus('error', 'Your message should be at least 10 characters long.');
+    if (!phonePattern.test(phone)) {
+      setStatus('error', messages.phone);
       return;
     }
 
-    const submitButton = form.querySelector('button[type="submit"]');
+    if (message.length < 10) {
+      setStatus('error', messages.message);
+      return;
+    }
+
     if (submitButton) {
       submitButton.disabled = true;
-      submitButton.textContent = 'Sending...';
+      submitButton.textContent = messages.sending;
     }
 
     try {
-      const response = await fetch('contact/send.php', {
+      const response = await fetch(document.documentElement.lang === 'ar' ? '../contact/send.php' : 'contact/send.php', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
@@ -297,17 +318,17 @@ const initForm = () => {
       const result = await response.json();
 
       if (!response.ok || !result.success) {
-        throw new Error(result.message || 'Unable to send your message right now.');
+        throw new Error(isArabic ? messages.unable : result.message || messages.unable);
       }
 
-      setStatus('success', result.message || 'Your message was sent successfully.');
+      setStatus('success', isArabic ? messages.success : result.message || messages.success);
       form.reset();
     } catch (error) {
-      setStatus('error', error.message || 'Something went wrong. Please try again.');
+      setStatus('error', isArabic ? messages.unable : error.message || 'Something went wrong. Please try again.');
     } finally {
       if (submitButton) {
         submitButton.disabled = false;
-        submitButton.innerHTML = 'Send Project Brief <span aria-hidden="true">→</span>';
+        submitButton.innerHTML = submitButtonLabel;
       }
     }
   });
