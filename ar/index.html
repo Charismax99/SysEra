@@ -53,6 +53,7 @@
         ]
       }
     </script>
+    <script src="../js/theme.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Sora:wght@600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
@@ -77,6 +78,7 @@
             <a href="#selected-work" data-view-route="selected-work">أعمالنا</a>
             <a href="#contact" data-view-route="contact">تواصل معنا</a>
             <a href="/" class="language-switch" data-language="en" lang="en" hreflang="en" aria-label="Switch to English"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9" /><path d="M3 12h18M12 3c2.5 2.5 3.8 5.5 3.8 9s-1.3 6.5-3.8 9M12 3c-2.5 2.5-3.8 5.5-3.8 9s1.3 6.5 3.8 9" /></svg>English</a>
+            <button class="theme-toggle" type="button" data-theme-toggle aria-label="الوضع الفاتح غير مفعّل، التبديل إلى الوضع الفاتح" aria-pressed="false"><span data-theme-icon aria-hidden="true">☼</span><span class="theme-toggle-label">فاتح</span></button>
           </nav>
 
           <a href="#contact" class="btn btn-primary nav-cta" data-view-route="contact">لنتحدث</a>
@@ -180,7 +182,7 @@
               <circle cx="116" cy="418" r="4" />
             </svg>
 
-            <article class="philosophy-block philosophy-primary reveal about-reveal about-reveal-card-one">
+            <article class="philosophy-block philosophy-primary reveal about-reveal about-reveal-card-one" tabindex="0">
               <span class="philosophy-number">01</span>
               <span class="philosophy-detail" aria-hidden="true">العمل / أولًا</span>
               <div class="philosophy-copy">
@@ -190,7 +192,7 @@
               <span class="block-corner" aria-hidden="true"></span>
             </article>
 
-            <article class="philosophy-block philosophy-secondary reveal about-reveal about-reveal-card-two">
+            <article class="philosophy-block philosophy-secondary reveal about-reveal about-reveal-card-two" tabindex="0">
               <span class="philosophy-number">02</span>
               <span class="philosophy-detail" aria-hidden="true">فريق / واحد</span>
               <div class="philosophy-copy">
@@ -200,7 +202,7 @@
               <span class="block-corner" aria-hidden="true"></span>
             </article>
 
-            <article class="philosophy-block philosophy-tertiary reveal about-reveal about-reveal-card-three">
+            <article class="philosophy-block philosophy-tertiary reveal about-reveal about-reveal-card-three" tabindex="0">
               <span class="philosophy-number">03</span>
               <span class="philosophy-detail" aria-hidden="true">نمو / مستمر</span>
               <div class="philosophy-copy">
@@ -539,13 +541,13 @@
           <div class="technology-ecosystem reveal" aria-label="منظومة التقنيات في SysEra">
             <svg class="ecosystem-links" viewBox="0 0 1200 560" preserveAspectRatio="none" aria-hidden="true">
               <path class="ecosystem-link ecosystem-link-web" d="M248 142 H398 L520 255" />
-              <path class="ecosystem-signal ecosystem-signal-web" d="M248 142 H398 L520 255" />
+              <path class="ecosystem-signal ecosystem-signal-web" pathLength="100" d="M248 142 H398 L520 255" />
               <path class="ecosystem-link ecosystem-link-backend" d="M284 418 H410 L520 305" />
-              <path class="ecosystem-signal ecosystem-signal-backend" d="M284 418 H410 L520 305" />
+              <path class="ecosystem-signal ecosystem-signal-backend" pathLength="100" d="M284 418 H410 L520 305" />
               <path class="ecosystem-link ecosystem-link-data" d="M952 142 H802 L680 255" />
-              <path class="ecosystem-signal ecosystem-signal-data" d="M952 142 H802 L680 255" />
+              <path class="ecosystem-signal ecosystem-signal-data" pathLength="100" d="M952 142 H802 L680 255" />
               <path class="ecosystem-link ecosystem-link-ai" d="M916 418 H790 L680 305" />
-              <path class="ecosystem-signal ecosystem-signal-ai" d="M916 418 H790 L680 305" />
+              <path class="ecosystem-signal ecosystem-signal-ai" pathLength="100" d="M916 418 H790 L680 305" />
               <path class="ecosystem-orbit" d="M520 245 L555 210 H645 L680 245 V315 L645 350 H555 L520 315 Z" />
             </svg>
 
@@ -560,7 +562,7 @@
               </div>
             </div>
 
-            <section class="tech-layer tech-layer-web" aria-labelledby="layer-web-title">
+            <section class="tech-layer tech-layer-web" aria-labelledby="layer-web-title" tabindex="0">
               <header><span>01</span><h3 id="layer-web-title">الويب والتجارة</h3></header>
               <ul class="tech-nodes tech-chain" aria-label="تقنيات الويب والتجارة">
                 <li lang="en" dir="ltr" tabindex="0">WordPress</li>
@@ -571,7 +573,7 @@
               </ul>
             </section>
 
-            <section class="tech-layer tech-layer-backend" aria-labelledby="layer-backend-title">
+            <section class="tech-layer tech-layer-backend" aria-labelledby="layer-backend-title" tabindex="0">
               <header><span>02</span><h3 id="layer-backend-title">الأنظمة الخلفية</h3></header>
               <ul class="tech-nodes tech-chain" aria-label="تقنيات الأنظمة الخلفية">
                 <li lang="en" dir="ltr" tabindex="0">PHP</li>
@@ -581,7 +583,7 @@
               </ul>
             </section>
 
-            <section class="tech-layer tech-layer-data" aria-labelledby="layer-data-title">
+            <section class="tech-layer tech-layer-data" aria-labelledby="layer-data-title" tabindex="0">
               <header><span>03</span><h3 id="layer-data-title">البيانات والسحابة</h3></header>
               <ul class="tech-nodes" aria-label="تقنيات البيانات والسحابة">
                 <li lang="en" dir="ltr" tabindex="0">Supabase</li>
@@ -589,7 +591,7 @@
               <span class="layer-note">البيانات / المزامنة / التوسع</span>
             </section>
 
-            <section class="tech-layer tech-layer-ai" aria-labelledby="layer-ai-title">
+            <section class="tech-layer tech-layer-ai" aria-labelledby="layer-ai-title" tabindex="0">
               <header><span>04</span><h3 id="layer-ai-title">الذكاء الاصطناعي والأتمتة</h3></header>
               <p>نضيف قدرات ذكية تتكامل مع واجهات البرمجة والأنظمة والبيانات وتجارب الويب.</p>
               <span class="layer-note">قدرات / متكاملة</span>

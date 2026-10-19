@@ -124,6 +124,24 @@ main > .section[lang="en"],
   }
 }
 
+@media (min-width: 761px) and (max-width: 980px) {
+  .site-header .nav-shell { grid-template-columns: minmax(130px, 1fr) auto minmax(82px, 1fr); gap: 0.5rem; }
+  .site-header .brand img { width: 130px; }
+  .site-header .nav-cta { padding-inline: 0.6rem; }
+  .site-header .site-nav { gap: 0.3rem; }
+  .site-header .site-nav a { white-space: nowrap; font-size: 0.8rem; }
+}
+
+@media (min-width: 761px) and (max-width: 850px) {
+  .site-header .nav-shell { grid-template-columns: minmax(115px, 1fr) auto minmax(70px, 1fr); gap: 0.35rem; }
+  .site-header .brand img { width: 115px; }
+}
+
+@media (min-width: 761px) and (max-width: 790px) {
+  .site-header .site-nav { gap: 0.2rem; }
+  .site-header .site-nav a { font-size: 0.77rem; }
+}
+
 @media (max-width: 760px) {
   .site-header .language-switch {
     border-right: 0;
