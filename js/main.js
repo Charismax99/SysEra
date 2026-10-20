@@ -180,6 +180,12 @@ const initNavigation = () => {
     link.addEventListener('click', closeMenu);
   });
 
+  document.addEventListener('click', (event) => {
+    if (!mobileHeaderQuery.matches || !siteNav.classList.contains('open')) return;
+    if (siteNav.contains(event.target) || navToggle.contains(event.target)) return;
+    closeMenu();
+  });
+
   document.addEventListener('keydown', (event) => {
     if (event.key === 'Escape' && siteNav.classList.contains('open')) {
       closeMenu();

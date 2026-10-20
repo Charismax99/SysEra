@@ -4595,6 +4595,18 @@ button:disabled {
     gap: 0.55rem;
   }
 
+  .footer-bottom > p:first-child {
+    align-self: center;
+    width: 100%;
+    text-align: center;
+  }
+
+  .footer-bottom > .footer-status {
+    align-self: center;
+    justify-content: center;
+    width: 100%;
+  }
+
   .hero-copy h1 {
     font-size: clamp(2.7rem, 13vw, 3.7rem);
     letter-spacing: -0.055em;
