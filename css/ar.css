@@ -995,6 +995,9 @@ main > .section[lang="en"],
 .site-footer[lang="ar"] .footer-connect a:hover::after,
 .site-footer[lang="ar"] .footer-connect a:focus-visible::after { left: 0; }
 
+html[lang="ar"][data-theme="light"] #technology .core-approach { color: #315f76; }
+html[lang="ar"][data-theme="light"] #technology .tech-coordinate { color: #49748a; }
+
 @media (max-width: 760px) {
   .site-footer[lang="ar"] .footer-inner {
     grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
